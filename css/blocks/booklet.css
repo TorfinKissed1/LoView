@@ -1,0 +1,79 @@
+.booklet {
+    background: var(--middle-brown);
+    position: relative;
+}
+.booklet__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 113px;
+}
+@media (width <= 1130px) {
+.booklet__container {
+    padding-top: 28px;
+}
+}
+@media (width <= 630px) {
+.booklet__container {
+    padding-block: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+}
+.booklet__img {
+    margin-top: -20px;
+    min-width: 0;
+}
+@media (width <= 1130px) {
+.booklet__img {
+max-width: 153px;
+margin-top: 0px;
+    }
+}
+@media (width <= 630px) {
+.booklet__img {
+    max-width: 128px;
+position: absolute;
+right: 16px;
+bottom: 0px;
+z-index: 0;
+    }
+}
+.booklet__title {
+    font-family: var(--second-family);
+font-weight: 300;
+font-size: 48px;
+line-height: 124%;
+text-transform: uppercase;
+color: var(--for-light-text);
+z-index: 1;
+text-wrap: balance;
+}
+@media (width <= 1130px) {
+    .booklet__title {
+font-size: 28px;
+max-width: 40%;
+    }
+}
+@media (width <= 630px) {
+    .booklet__title {
+max-width: 100%;
+    }
+}
+.booklet__button {
+    margin-left: auto;
+    font-weight: 400;
+font-size: 18px;
+border: none;
+padding: 29px 105px 26px;
+background: var(--white);
+z-index: 1;
+}
+
+@media (width <= 1130px) {
+.booklet__button {
+padding: 14px 64px;
+font-size: 14px;
+}
+}

@@ -1,0 +1,150 @@
+.location {
+    position: relative;
+    background: url(../../images/location-img.webp) no-repeat center / cover;
+}
+
+.location__container {
+    padding-top: 81px;
+    padding-bottom: 155px;
+}
+
+@media (width <=1000px) {
+    .location__container {
+    padding: 81px 60px 213px;
+}
+}
+
+@media (width <=768px) {
+    .location__container {
+    padding: 16px;
+}
+}
+
+@media (width <=360px) {
+    .location__container {
+                padding: 16px 0px;
+    }
+}
+
+.location__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+        padding-left: 153px;
+}
+
+@media (width <=768px) {
+    .location__inner {
+        max-width: 420px;
+        min-height: 376px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (width <=360px) {
+    .location__inner {
+        min-height: 435px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.location__title {
+    margin-bottom: 64px;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+@media (width <=768px) {
+    .location__title {
+        margin-bottom: 0px;
+        font-size: 14px;
+    }
+}
+
+.location__subtitle {
+    max-width: 785px;
+    font-family: var(--second-family);
+    font-size: 64px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+@media (width <=768px) {
+    .location__subtitle {
+        font-size: 32px;
+        text-wrap: balance;
+    }
+}
+
+.location__content {
+
+}
+
+@media (width <=768px) {
+.location__content {
+    display: none;
+}
+}
+
+.location__description {
+    margin-bottom: 32px;
+    max-width: 514px;
+    font-size: 20px;
+    color: var(--white);
+}
+
+@media (width <=768px) {
+    .location__description {
+        display: none;
+    }
+}
+
+.location__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media (width <=768px) {
+    .location__list {
+        display: none;
+    }
+}
+
+.location__list-item {
+    font-size: 20px;
+    color: var(--white);
+    display: flex;
+    gap: 16px;
+}
+
+.location__list-item::before {
+    content: "";
+    margin-top: 8px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--white);
+    ;
+}
+
+.location__note {
+    display: none;
+}
+
+@media (width <= 768px) {
+    .location__note {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+}
