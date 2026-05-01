@@ -10,19 +10,19 @@
 
 @media (width <=1000px) {
     .location__container {
-    padding: 81px 60px 213px;
-}
+        padding: 81px 60px 213px;
+    }
 }
 
 @media (width <=768px) {
     .location__container {
-    padding: 16px;
-}
+        padding: 16px;
+    }
 }
 
 @media (width <=360px) {
     .location__container {
-                padding: 16px 0px;
+        padding: 16px 0px;
     }
 }
 
@@ -30,7 +30,13 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-        padding-left: 153px;
+    padding-left: 153px;
+}
+
+@media (width <=1000px) {
+    .location__inner {
+        padding-left: 0;
+    }
 }
 
 @media (width <=768px) {
@@ -40,6 +46,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+        padding-left: 0px;
     }
 }
 
@@ -63,7 +70,7 @@
 
 @media (width <=768px) {
     .location__title {
-        margin-bottom: 0px;
+        margin-bottom: 24px;
         font-size: 14px;
     }
 }
@@ -84,14 +91,12 @@
     }
 }
 
-.location__content {
-
-}
+.location__content {}
 
 @media (width <=768px) {
-.location__content {
-    display: none;
-}
+    .location__content {
+        display: none;
+    }
 }
 
 .location__description {
@@ -141,10 +146,10 @@
     display: none;
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
     .location__note {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
 }

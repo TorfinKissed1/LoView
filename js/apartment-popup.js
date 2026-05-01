@@ -40,6 +40,8 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
   function initSwiper() {
     if (swiper) return;
 
+    totalEl.textContent = swiperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+
     swiper = new Swiper(swiperEl, {
       loop: true,
 navigation: { nextEl: popup.querySelector('.layouts-popup__arrow--next'), prevEl: popup.querySelector('.layouts-popup__arrow--prev'), },
@@ -52,8 +54,6 @@ navigation: { nextEl: popup.querySelector('.layouts-popup__arrow--next'), prevEl
         }
       }
     });
-
-    totalEl.textContent = swiper.slides.length - swiper.loopedSlides * 2;
   }
 
   function updateFraction(swiper) {

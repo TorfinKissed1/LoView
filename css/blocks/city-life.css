@@ -162,3 +162,19 @@ background: var(--dark-brown);
         height: 56px;
     }
 }
+
+@media (width <= 768px) {
+    .laview-slider__slide-bg {
+        padding-bottom: 0;
+    }
+    .city-life__video-wrapper--tablet {
+        min-height: auto;
+    }
+    .city-life__container {
+        background-size: cover;
+        background-position: 60% center;
+    }
+    .video {
+        padding-block: 32px;
+    }
+}

@@ -7,6 +7,8 @@ export function initLaviewSliders() {
       slidesPerView: 1,
       speed: 1000,
       allowTouchMove: true,
+      noSwiping: true,
+      noSwipingSelector: '.beaches__slider-pagination, .beaches__slider-pagination *',
       loop: sliderEl.classList.contains('laview-slider--loop'),
 
       navigation: {

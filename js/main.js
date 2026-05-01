@@ -7,6 +7,7 @@ import { initMapSlider } from './sliders/map-slider.js';
 import { initArchitectureParallax } from './architecture.js';
 import { initVideoPopup } from './video-lighbox.js';
 import { initLaviewSliders } from './sliders/laview-slider.js';
+import { initBeachesSlider } from './sliders/beaches-slider.js';
 import { initApartmentPopup } from './apartment-popup.js';
 import { initLoviewVideoObserver } from './loview-video.js';
 import { initInfrastructureAccordion } from './infrastructure.js';
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoPopup();
   initMapSlider();
   initLaviewSliders();
+  initBeachesSlider();
   initApartmentPopup();
   initInfrastructureAccordion();
   initLoviewVideoObserver();

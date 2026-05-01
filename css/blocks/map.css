@@ -133,7 +133,7 @@ top: 290px;
         direction: rtl;
         display: block;
         max-width: 1180px;
-        max-height: 692px;
+        max-height: 710px;
         object-fit: contain;
     }
 }
@@ -307,6 +307,7 @@ top: 290px;
 @media (width <=1700px) {
     .map__info {
     align-self: flex-end;
+    margin-top: 110px;
 }
 }
 
@@ -315,6 +316,7 @@ top: 290px;
         width: 100%;
         gap: 32px;
         align-self: flex-start;
+        margin-top: 0px;
     }
 }
 
@@ -495,4 +497,31 @@ top: 290px;
 .map__info-section:hover .map__walking-icon,
 .map__info-section:hover .map__car-icon {
   opacity: 10%;
+}
+
+@media (width <=768px) {
+    .map__container {
+        min-height: auto;
+    }
+    .map__inner {
+        padding-bottom: 0;
+        justify-content: flex-start;
+    }
+
+    .map__slide {
+        gap: 32px;
+    }
+
+    .map__button {
+        width: 328px;
+    }
+}
+
+@media (width <=500px) {
+    .map__info {
+        max-width: 100%;
+    }
+    .map__button {
+        width: 100%;
+    }
 }

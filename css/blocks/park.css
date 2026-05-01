@@ -164,6 +164,9 @@
 }
 
 @media (width <=700px) {
+    .park__container {
+        min-height: 562px;
+    }
     .park__note {
         bottom: 32px;
         max-width: 66%;
@@ -211,3 +214,17 @@
 }
 
 .park__note-button-icon {}
+
+@media (width <=768px) {
+    .park__container {
+        justify-content: start;
+        align-items: start;
+    }
+    .park__title-number {
+        font-size: 80px;
+    }
+
+    .park__note {
+        border-radius: 8px 0px 0px 8px;
+    }
+}
