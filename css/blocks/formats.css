@@ -11,6 +11,12 @@
     background: url(../../images/bottom-banner.png) no-repeat center / cover;
 }
 
+@media (width <= 768px) {
+    .formats__container {
+        padding: 0 !important;
+    }
+}
+
 @media (width <= 1100px) {
 .formats__container{
     background: none;
@@ -30,6 +36,21 @@
         color: var(--brand-brown);
         padding: 0px;
         max-width: 100%;
+    }
+}
+@media (width <= 500px) {
+    .formats__inner {
+        gap: 0px;
+    }
+}
+
+@media (width <= 768px) {
+    .formats__inner > :not(.formats__img) {
+        padding-inline: var(--container-padding);
+    }
+
+    .formats__img {
+        width: 100%;
     }
 }
 .formats__img {

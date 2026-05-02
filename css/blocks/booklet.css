@@ -13,6 +13,11 @@
     padding-top: 28px;
 }
 }
+@media (width <= 768px) {
+.booklet__container {
+    gap: 30px;
+}
+}
 @media (width <= 630px) {
 .booklet__container {
     padding-block: 24px;
@@ -75,5 +80,12 @@ z-index: 1;
 .booklet__button {
 padding: 14px 64px;
 font-size: 14px;
+}
+}
+@media (width <= 768px) {
+.booklet__button {
+margin-left: 0;
+width: 225px;
+height: 48px;
 }
 }

@@ -32,6 +32,11 @@
     color: var(--brand-brown);
     margin-bottom: 51px;
 }
+@media (width <= 768px) {
+.about__title {
+    margin-bottom: 24px;
+}
+}
 @media (width <= 360px) {
 .about__title {
     width: 60%;
