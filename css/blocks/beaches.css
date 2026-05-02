@@ -293,6 +293,9 @@
 .beaches__slider-button--prev {
     display: none;
 }
+.beaches__slider-button--next {
+    display: none;
+}
 
 @media (width <=1400px) {
     .beaches__inner {

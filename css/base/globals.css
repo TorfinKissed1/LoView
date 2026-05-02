@@ -203,7 +203,6 @@ font-size: 28px;
   display: flex;
   flex-direction: column;
   z-index: 2;
-  margin-top: 80px;
 }
 
 @media (width <= 768px) {
