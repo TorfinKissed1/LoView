@@ -2,10 +2,32 @@ export function initArchitectureParallax() {
   const section = document.querySelector('.architecture');
   const img = document.querySelector('.architecture__inner-top');
   const content = document.querySelector('.architecture__content');
+  const imgWrapper = section?.querySelector('.architecture__img-wrapper');
+  const desktopTitles = section?.querySelector('.architecture__titles-wrapper--desktop');
+  const listWrapper = section?.querySelector('.architecture__list-wrapper');
+  const mql = window.matchMedia('(max-width: 1000px)');
 
   if (!section || !img || !content) return;
 
+  function syncResponsiveStructure() {
+    if (!imgWrapper || !desktopTitles || !listWrapper) return;
+
+    if (mql.matches) {
+      if (imgWrapper.nextElementSibling !== desktopTitles) {
+        imgWrapper.after(desktopTitles);
+      }
+    } else if (content.firstElementChild !== desktopTitles) {
+      content.insertBefore(desktopTitles, listWrapper);
+    }
+  }
+
   function update() {
+    if (mql.matches) {
+      img.style.transform = 'none';
+      content.style.transform = 'none';
+      return;
+    }
+
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
@@ -39,6 +61,20 @@ export function initArchitectureParallax() {
 
     img.style.transform = `translateY(${imgMove}px)`;
     content.style.transform = `translateY(${contentMove}px)`;
+  }
+
+  syncResponsiveStructure();
+
+  if (typeof mql.addEventListener === 'function') {
+    mql.addEventListener('change', () => {
+      syncResponsiveStructure();
+      update();
+    });
+  } else if (typeof mql.addListener === 'function') {
+    mql.addListener(() => {
+      syncResponsiveStructure();
+      update();
+    });
   }
 
   window.addEventListener('scroll', update, { passive: true });

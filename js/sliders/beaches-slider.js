@@ -35,32 +35,35 @@ export function initBeachesSlider() {
 
   const mql = window.matchMedia('(max-width: 1000px)');
 
-  function syncPaginationPosition() {
+  function positionPagination() {
     if (!pagination) return;
 
     if (mql.matches) {
       const activeIdx = swiper.activeIndex ?? 0;
       const activeSlide = slides[activeIdx];
       const media = activeSlide?.querySelector('.beaches__slide-media');
-      if (media && media.nextElementSibling !== pagination) {
-        media.after(pagination);
+      if (media) {
+        const top = media.offsetTop + media.offsetHeight + 16;
+        pagination.style.top = top + 'px';
       }
-    } else if (pagination.parentElement !== sliderEl) {
-      sliderEl.appendChild(pagination);
+    } else {
+      pagination.style.top = '';
     }
   }
 
   updateDots(swiper.activeIndex);
-  syncPaginationPosition();
+  positionPagination();
 
   swiper.on('slideChange', () => {
     updateDots(swiper.activeIndex);
-    syncPaginationPosition();
+    positionPagination();
   });
 
+  window.addEventListener('resize', positionPagination);
+
   if (typeof mql.addEventListener === 'function') {
-    mql.addEventListener('change', syncPaginationPosition);
+    mql.addEventListener('change', positionPagination);
   } else if (typeof mql.addListener === 'function') {
-    mql.addListener(syncPaginationPosition);
+    mql.addListener(positionPagination);
   }
 }

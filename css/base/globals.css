@@ -203,6 +203,7 @@ font-size: 28px;
   display: flex;
   flex-direction: column;
   z-index: 2;
+  margin-top: 80px;
 }
 
 @media (width <= 768px) {
@@ -219,6 +220,7 @@ font-size: 28px;
   font-size: 48px;
   line-height: 124%;
   text-transform: uppercase;
+  margin-top: 24px;
 }
 
 @media (width <= 768px) {
@@ -267,12 +269,6 @@ font-size: 16px;
       display: flex;
       gap: 24px;
       align-items: center;
-}
-
-@media (width <= 1650px) {
-.laview-slider__pagination {
-      flex-wrap: wrap;
-  }
 }
 
 @media (width <= 768px) {

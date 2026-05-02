@@ -224,5 +224,15 @@ padding-right: 0px;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
+@media (width <= 768px) {
+  .infrastructure__container {
+    padding-block: 64px;
+  }
+
+  .infrastructure__accordion {
+    padding-top: 0;
+  }
+}
+
 
 
