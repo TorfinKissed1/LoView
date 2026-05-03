@@ -93,6 +93,11 @@
         color: var(--dark-brown);
     }
 }
+@media (width <=768px) {
+    .beaches__title {
+        margin-top: 0px;
+    }
+}
 
 .beaches__description {
     backdrop-filter: blur(0px);
@@ -237,7 +242,7 @@
 @media (width <=1000px) {
     .beaches__slider-title {
         margin-left: 0;
-        margin-top: 34px;
+        margin-top: 74px;
         padding-inline: 16px;
         color: var(--dark-brown);
         font-size: 32px;
@@ -245,6 +250,11 @@
 
     .beaches__slider-title span {
         display: none;
+    }
+}
+@media (width <=768px) {
+    .beaches__slider-title {
+        margin-top: 30px;
     }
 }
 
@@ -322,6 +332,7 @@
     .beaches__inner {
         padding-bottom: 0px;
         padding-inline: 16px;
+        margin-top: 74px;
     }
     .beaches__slide.laview-slider__slide {
         min-height: fit-content;

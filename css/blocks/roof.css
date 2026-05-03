@@ -49,7 +49,7 @@ letter-spacing: 0.02em;
 text-transform: uppercase;
 }
 
-@media (width > 1000px) {
+@media (width <= 1000px) {
     .roof__slider-pagination {
         width: calc(100% - 36px);
         max-width: calc(100% - 36px);
@@ -72,6 +72,11 @@ font-size: 14px;
 @media (width <= 768px) {
 .roof__slider-pagination {
       top: clamp(11.375rem, 0.18rem + 49.75vw, 24.063rem);
+      width: 100%;
+      max-width: 100%;
+}
+.roof__slide-content {
+    margin-top: 40px;
 }
 }
 
