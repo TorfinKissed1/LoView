@@ -54,7 +54,7 @@
     margin-bottom: 40px;
 }
 
-@media (width <=500px) {
+@media (width <=768px) {
     .services__title {
         margin-bottom: 8px;
     }
