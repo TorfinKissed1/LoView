@@ -23,9 +23,7 @@
       <!-- Шапка под мобилки -->
       <div class="header-mobile__inner">
         <a class="header-mobile__phone" href="tel:+78002220610">
-          <svg class="header-mobile__phone-icon" aria-hidden="true" width="26" height="26">
-            <use href="./icons/sprite.svg#icon-phone"></use>
-          </svg>
+          <span class="header-mobile__phone-text">8 800 222-06-10</span>
         </a>
         <a class="header-mobile__logo-link" href="/">
           <img class="header-mobile__logo" src="./images/logo-mobile.svg" width="112" height="27" alt="Логотип Лавью">
@@ -1496,7 +1494,7 @@
                 паркинга
               </p>
             </div>
-            <div class="comfort__parking-info">
+            <div class="comfort__parking-info comfort__parking-info--margin">
               <span class="comfort__parking-info-number">
                 82+9
               </span>
@@ -1705,10 +1703,10 @@
                 alt="Логотип альфа Dевелопмент">
             </a>
             <h3 class="about__subtitle section__subtitle">
-              Мы — <a href="https://alfa-development.ru/" class="about__subtitle-link text-accent">альфа Dевелопмент
+              Мы — <a href="https://alfa-development.ru/" class="about__subtitle-link text-accent">альфа</a> <span class="about__subtitle-link-inner"><a href="https://alfa-development.ru/" class="about__subtitle-link text-accent">Dевелопмент
                 <img class="about__subtitle-icon" src="./icons/link-icon.svg" alt="" width="45px" height="45px"></a>
               , родом из Сибири.
-              Мы уверены, что счастье можно построить
+              Мы уверены, что счастье можно построить</span>
             </h3>
           </div>
         </div>
@@ -2069,32 +2067,84 @@
 
       </div>
       <div class="layouts-popup__bottom">
-        <div class="layouts-popup__stats">
-          <div class="layouts-popup__stat">
-            <div class="layouts-popup__value">124,39м²</div>
-            <div class="layouts-popup__label">площадь</div>
-          </div>
-          <div class="layouts-popup__stat">
-            <div class="layouts-popup__value">3,3м</div>
-            <div class="layouts-popup__label">высота потолков</div>
-          </div>
-          <div class="layouts-popup__nav">
-            <button class="layouts-popup__arrow layouts-popup__arrow--prev" type="button">
-              <img src="./icons/fancy-arrow.svg" alt="">
-            </button>
-            <div class="layouts-popup__fraction">
-              <span class="layouts-popup__current">1</span>/<span class="layouts-popup__total">3</span>
+        <div class="layouts-popup__bottom-slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide layouts-popup__bottom-slide">
+              <div class="layouts-popup__stats">
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">124,39м²</div>
+                  <div class="layouts-popup__label">площадь</div>
+                </div>
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">3,3м</div>
+                  <div class="layouts-popup__label">высота потолков</div>
+                </div>
+                <div class="layouts-popup__nav">
+                  <button class="layouts-popup__arrow layouts-popup__arrow--prev" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                  <div class="layouts-popup__fraction">
+                    <span class="layouts-popup__current">1</span>/<span class="layouts-popup__total">3</span>
+                  </div>
+                  <button class="layouts-popup__arrow layouts-popup__arrow--next" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                </div>
+              </div>
             </div>
-            <button class="layouts-popup__arrow layouts-popup__arrow--next" type="button">
-              <img src="./icons/fancy-arrow.svg" alt="">
-            </button>
+            <div class="swiper-slide layouts-popup__bottom-slide">
+              <div class="layouts-popup__stats">
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">96,70м²</div>
+                  <div class="layouts-popup__label">площадь</div>
+                </div>
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">3,3м</div>
+                  <div class="layouts-popup__label">высота потолков</div>
+                </div>
+                <div class="layouts-popup__nav">
+                  <button class="layouts-popup__arrow layouts-popup__arrow--prev" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                  <div class="layouts-popup__fraction">
+                    <span class="layouts-popup__current">1</span>/<span class="layouts-popup__total">3</span>
+                  </div>
+                  <button class="layouts-popup__arrow layouts-popup__arrow--next" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide layouts-popup__bottom-slide">
+              <div class="layouts-popup__stats">
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">82,15м²</div>
+                  <div class="layouts-popup__label">площадь</div>
+                </div>
+                <div class="layouts-popup__stat">
+                  <div class="layouts-popup__value">3,3м</div>
+                  <div class="layouts-popup__label">высота потолков</div>
+                </div>
+                <div class="layouts-popup__nav">
+                  <button class="layouts-popup__arrow layouts-popup__arrow--prev" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                  <div class="layouts-popup__fraction">
+                    <span class="layouts-popup__current">1</span>/<span class="layouts-popup__total">3</span>
+                  </div>
+                  <button class="layouts-popup__arrow layouts-popup__arrow--next" type="button">
+                    <img src="./icons/fancy-arrow.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <form class="layouts-popup__form">
         <div class="layouts-popup__inputs">
           <input type="text" placeholder="Введите ваше имя">
-          <input type="tel" placeholder="Ваш телефон">
+          <input type="tel" placeholder="Ваш телефон" inputmode="tel" maxlength="16">
         </div>
         <button class="layouts-popup__submit button">
           Запросить все планировки

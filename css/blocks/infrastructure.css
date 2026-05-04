@@ -130,8 +130,14 @@ max-height: 500px;
 }
 
 @media (width <= 1350px) {
+.infrastructure__item[open] {
+max-height: none;
+}
+}
+
+@media (width <= 1350px) {
   .infrastructure__item {
-  padding-block: 19px;
+  padding-block: 16px;
 
   }
 }

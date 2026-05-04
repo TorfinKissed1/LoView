@@ -8,13 +8,11 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
   const overlay = popup.querySelector('.popup__overlay');
 
   const swiperEl = popup.querySelector('.layouts-popup__slider');
-  const currentEl = popup.querySelector('.layouts-popup__current');
-  const totalEl = popup.querySelector('.layouts-popup__total');
-
-  const nextBtn = popup.querySelector('.layouts-popup__arrow--next');
-  const prevBtn = popup.querySelector('.layouts-popup__arrow--prev');
+  const bottomSwiperEl = popup.querySelector('.layouts-popup__bottom-slider');
+  const phoneInput = popup.querySelector('.layouts-popup__inputs input[type="tel"]');
 
   let swiper;
+  let bottomSwiper;
 
   function openPopup() {
     popup.classList.add('active');
@@ -23,6 +21,8 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
     document.body.style.overflow = 'hidden';
 
     initSwiper();
+    swiper?.updateAutoHeight();
+    bottomSwiper?.updateAutoHeight();
   }
 
   function closePopup() {
@@ -35,37 +35,178 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
       swiper.destroy(true, true);
       swiper = null;
     }
+
+    if (bottomSwiper) {
+      bottomSwiper.destroy(true, true);
+      bottomSwiper = null;
+    }
   }
 
   function initSwiper() {
     if (swiper) return;
 
-    totalEl.textContent = swiperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+    const slidesCount = swiperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
 
     swiper = new Swiper(swiperEl, {
       loop: true,
-navigation: { nextEl: popup.querySelector('.layouts-popup__arrow--next'), prevEl: popup.querySelector('.layouts-popup__arrow--prev'), },
+      autoHeight: true,
       on: {
         init(swiper) {
-          updateFraction(swiper);
+          updateFraction(swiper.realIndex, slidesCount);
         },
         slideChange(swiper) {
-          updateFraction(swiper);
+          updateFraction(swiper.realIndex, slidesCount);
+          if (bottomSwiper && bottomSwiper.realIndex !== swiper.realIndex) {
+            bottomSwiper.slideToLoop(swiper.realIndex);
+          }
+          swiper.updateAutoHeight();
+        }
+      }
+    });
+
+    bottomSwiper = new Swiper(bottomSwiperEl, {
+      loop: true,
+      allowTouchMove: false,
+      autoHeight: true,
+      on: {
+        init(swiper) {
+          updateFraction(swiper.realIndex, slidesCount);
+        },
+        slideChange(swiper) {
+          updateFraction(swiper.realIndex, slidesCount);
         }
       }
     });
   }
 
-  function updateFraction(swiper) {
-    currentEl.textContent = swiper.realIndex + 1;
+  function updateFraction(index, total) {
+    popup.querySelectorAll('.layouts-popup__current').forEach((el) => {
+      el.textContent = index + 1;
+    });
+
+    popup.querySelectorAll('.layouts-popup__total').forEach((el) => {
+      el.textContent = total;
+    });
+  }
+
+  function formatPhone(value) {
+    let digits = value.replace(/\D/g, '');
+
+    if (!digits) {
+      return '';
+    }
+
+    if (digits[0] === '8') {
+      digits = `7${digits.slice(1)}`;
+    } else if (digits[0] === '9') {
+      digits = `7${digits}`;
+    }
+
+    if (digits[0] !== '7') {
+      digits = `7${digits}`;
+    }
+
+    digits = digits.slice(0, 11);
+
+    const code = digits.slice(1, 4);
+    const first = digits.slice(4, 7);
+    const second = digits.slice(7, 9);
+    const third = digits.slice(9, 11);
+
+    let formatted = '+7';
+
+    if (code) {
+      formatted += `(${code}`;
+    }
+
+    if (code.length === 3) {
+      formatted += ')';
+    }
+
+    if (first) {
+      formatted += first;
+    }
+
+    if (second) {
+      formatted += `-${second}`;
+    }
+
+    if (third) {
+      formatted += `-${third}`;
+    }
+
+    return formatted;
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      phoneInput.value = formatPhone(phoneInput.value);
+    });
+
+    phoneInput.addEventListener('keydown', (e) => {
+      if (e.key !== 'Backspace' && e.key !== 'Delete') {
+        return;
+      }
+
+      const digits = phoneInput.value.replace(/\D/g, '');
+
+      if (digits.length <= 1) {
+        e.preventDefault();
+        phoneInput.value = '';
+        return;
+      }
+
+      const cursorPosition = phoneInput.selectionStart ?? phoneInput.value.length;
+      const hasSelection = phoneInput.selectionStart !== phoneInput.selectionEnd;
+
+      if (hasSelection) {
+        return;
+      }
+
+      const targetIndex = e.key === 'Backspace' ? cursorPosition - 1 : cursorPosition;
+      const targetChar = phoneInput.value[targetIndex];
+
+      if (targetChar && /\D/.test(targetChar)) {
+        e.preventDefault();
+
+        const chars = phoneInput.value.split('');
+        const direction = e.key === 'Backspace' ? -1 : 1;
+        let digitIndex = targetIndex;
+
+        while (digitIndex >= 0 && digitIndex < chars.length && /\D/.test(chars[digitIndex])) {
+          digitIndex += direction;
+        }
+
+        if (digitIndex >= 0 && digitIndex < chars.length) {
+          chars.splice(digitIndex, 1);
+          phoneInput.value = formatPhone(chars.join(''));
+        }
+      }
+    });
   }
 
   openBtn.addEventListener('click', openPopup);
+
+  window.addEventListener('resize', () => {
+    swiper?.updateAutoHeight();
+    bottomSwiper?.updateAutoHeight();
+  });
+
 closeBtns.forEach((btn) => {
   btn.addEventListener('click', closePopup);
 });
 
   popup.addEventListener('click', (e) => {
+    if (e.target.closest('.layouts-popup__arrow--next')) {
+      swiper?.slideNext();
+      return;
+    }
+
+    if (e.target.closest('.layouts-popup__arrow--prev')) {
+      swiper?.slidePrev();
+      return;
+    }
+
     if (e.target === popup || e.target === overlay) {
       closePopup();
     }

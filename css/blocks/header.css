@@ -200,16 +200,19 @@
 }
 
 .header-mobile__phone {
-    width: 40px;
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header-mobile__phone-icon {
-    width: 26px;
-    height: 26px;
+.header-mobile__phone-text {
+    display: block;
+    color: var(--Dark-brown, #3C3634);
+    font-family: Onest;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .header-mobile__logo-link {

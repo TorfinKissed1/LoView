@@ -71,6 +71,11 @@
         gap: 32px;
     }
 }
+@media (width <=650px) {
+    .apartments__numbers-list {
+        max-width: 74%;
+    }
+}
 
 @media (width <=360px) {
     .apartments__numbers-list {
@@ -98,6 +103,11 @@
         font-size: 40px;
     }
 }
+@media (width <=650px) {
+    .apartments__list-number {
+        max-width: 97%;
+    }
+}
 
 .apartments__list-number--accent {
     font-size: 220px;
@@ -121,6 +131,13 @@
 @media (width <=900px) {
     .apartments__list-description {
         font-size: 14px;
+
+    }
+}
+
+@media (width <=650px) {
+    .apartments__list-description {
+        max-width: 247px;
 
     }
 }
@@ -152,6 +169,12 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+@media (width <=500px) {
+    .apartments__info-text-wrapper {
+        padding-right: 0px;
+    }
 }
 
 .apartments__description {

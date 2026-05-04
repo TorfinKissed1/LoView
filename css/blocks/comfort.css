@@ -169,10 +169,16 @@
     gap: 24px;
     z-index: 1;
 }
+.comfort__parking-info--margin {
+    margin-bottom: 32px;
+}
 
 @media (width <=768px) {
     .comfort__parking-info {
         gap: 16px;
+    }
+    .comfort__parking-info--margin {
+        margin-bottom: 16px;
     }
 }
 

@@ -77,8 +77,21 @@
 .about__subtitle-link {
 
 }
+
+@media (width <= 500px) {
+    .about__subtitle-link-inner {
+        display: inline-block;
+    }
+}
+
 .about__subtitle-icon {
     margin-bottom: -5px;
+}
+@media (width <= 768px) {
+.about__subtitle-icon {
+    width: 40px;
+    height: 40px;
+}
 }
 @media (width <= 360px) {
 .about__subtitle-icon {
@@ -201,6 +214,11 @@ color: var(--for-light-text);
 @media (width <= 970px) {
 .about__content-bottom {
     flex-direction: row;
+}
+}
+@media (width <= 768px) {
+.about__content-bottom {
+    align-items: flex-end;
 }
 }
 @media (width <= 970px) {

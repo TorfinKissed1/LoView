@@ -69,6 +69,12 @@
     .park__inner {
         display: flex;
         gap: 0px;
+        max-width: 90%;
+    }
+}
+@media (width <=500px) {
+    .park__inner {
+        max-width: 97%;
     }
 }
 

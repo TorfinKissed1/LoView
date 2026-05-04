@@ -3,10 +3,13 @@ export function initLaviewSliders() {
   if (!sliders.length) return;
 
   sliders.forEach((sliderEl) => {
+    const isBeachesSlider = sliderEl.classList.contains('beaches__slider');
+
     const swiper = new Swiper(sliderEl, {
       slidesPerView: 1,
       speed: 1000,
       allowTouchMove: true,
+      autoHeight: isBeachesSlider,
       noSwiping: true,
       noSwipingSelector: '.beaches__slider-pagination, .beaches__slider-pagination *, .roof__slider-pagination, .roof__slider-pagination *',
       loop: sliderEl.classList.contains('laview-slider--loop'),
@@ -42,6 +45,9 @@ export function initLaviewSliders() {
 
     swiper.on('slideChange', () => {
       updateUI(swiper.realIndex ?? swiper.activeIndex);
+      if (isBeachesSlider) {
+        swiper.updateAutoHeight();
+      }
     });
 
     updateUI(0);

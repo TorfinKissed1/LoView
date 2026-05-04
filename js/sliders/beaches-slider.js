@@ -51,19 +51,41 @@ export function initBeachesSlider() {
     }
   }
 
+  function updateSliderHeight() {
+    swiper.updateAutoHeight(300);
+  }
+
   updateDots(swiper.activeIndex);
   positionPagination();
+  updateSliderHeight();
 
   swiper.on('slideChange', () => {
     updateDots(swiper.activeIndex);
     positionPagination();
+    updateSliderHeight();
   });
 
-  window.addEventListener('resize', positionPagination);
+  swiper.on('imagesReady', updateSliderHeight);
+
+  sliderEl.querySelectorAll('img').forEach((img) => {
+    if (img.complete) return;
+    img.addEventListener('load', updateSliderHeight, { once: true });
+  });
+
+  window.addEventListener('resize', () => {
+    positionPagination();
+    updateSliderHeight();
+  });
 
   if (typeof mql.addEventListener === 'function') {
-    mql.addEventListener('change', positionPagination);
+    mql.addEventListener('change', () => {
+      positionPagination();
+      updateSliderHeight();
+    });
   } else if (typeof mql.addListener === 'function') {
-    mql.addListener(positionPagination);
+    mql.addListener(() => {
+      positionPagination();
+      updateSliderHeight();
+    });
   }
 }

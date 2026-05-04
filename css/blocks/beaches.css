@@ -326,6 +326,10 @@
 }
 
 @media (width <=1000px) {
+    .beaches__slider .swiper-wrapper {
+        align-items: flex-start;
+    }
+
     .beaches__slider-pagination {
         padding-left: 16px;
     }

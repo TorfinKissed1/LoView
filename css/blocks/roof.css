@@ -24,6 +24,11 @@ gap: 40px;
         max-width: 65%;
     margin-bottom: 32px;
 }
+@media (width <= 768px) {
+    .roof__description {
+        max-width: 100%;
+    }
+}
 .roof__description span {
 color: var(--brown);
 }
