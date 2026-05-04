@@ -260,6 +260,7 @@
 @media (width <=1100px) {
     .services__content-list-item-title {
         font-size: 16px;
+        max-width: 228px;
     }
 }
 

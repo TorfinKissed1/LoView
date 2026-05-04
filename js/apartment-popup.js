@@ -50,6 +50,22 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
     swiper = new Swiper(swiperEl, {
       loop: true,
       autoHeight: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        361: {
+          slidesPerView: 1.1,
+          spaceBetween: 16,
+        },
+        769: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+      },
       on: {
         init(swiper) {
           updateFraction(swiper.realIndex, slidesCount);
