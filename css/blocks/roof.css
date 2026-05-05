@@ -55,6 +55,10 @@ text-transform: uppercase;
 }
 
 @media (width <= 1000px) {
+    .roof__slider .swiper-wrapper {
+        align-items: flex-start;
+    }
+
     .roof__slider-pagination {
         width: calc(100% - 36px);
         max-width: calc(100% - 36px);

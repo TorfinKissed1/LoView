@@ -1,8 +1,8 @@
 export function initApartmentPopup() {
-  const openBtn = document.querySelector('.apartments__button');
+  const openBtns = document.querySelectorAll('.apartments__button, [data-layouts-popup-open]');
   const popup = document.getElementById('layouts-popup');
 
-  if (!openBtn || !popup) return;
+  if (!openBtns.length || !popup) return;
 
 const closeBtns = popup.querySelectorAll('[data-popup-close]');
   const overlay = popup.querySelector('.popup__overlay');
@@ -201,7 +201,12 @@ const closeBtns = popup.querySelectorAll('[data-popup-close]');
     });
   }
 
-  openBtn.addEventListener('click', openPopup);
+  openBtns.forEach((openBtn) => {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPopup();
+    });
+  });
 
   window.addEventListener('resize', () => {
     swiper?.updateAutoHeight();

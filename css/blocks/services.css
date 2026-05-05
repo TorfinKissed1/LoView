@@ -62,6 +62,12 @@
 
 .services__subtitle {}
 
+@media (width <=500px) {
+    .services__subtitle {
+        max-width: 500px;
+    }
+}
+
 .services__number {
     font-family: var(--second-family);
     font-weight: 300;

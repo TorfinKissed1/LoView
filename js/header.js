@@ -10,6 +10,7 @@ export function initHeaderMenu() {
   let startY = 0;
   let currentY = 0;
   let isSwiping = false;
+  let hasMoved = false;
 
   const openMenu = () => {
     burgerMenu.classList.add('is-open');
@@ -53,15 +54,23 @@ export function initHeaderMenu() {
 
   burgerMenu.addEventListener('touchstart', (e) => {
     startY = e.touches[0].clientY;
+    currentY = startY;
     isSwiping = true;
+    hasMoved = false;
   });
 
   burgerMenu.addEventListener('touchmove', (e) => {
     if (!isSwiping) return;
     currentY = e.touches[0].clientY;
+    hasMoved = true;
   });
 
   burgerMenu.addEventListener('touchend', () => {
+    if (!hasMoved) {
+      isSwiping = false;
+      return;
+    }
+
     const diff = startY - currentY;
     if (diff > 50) {
       closeMenu();

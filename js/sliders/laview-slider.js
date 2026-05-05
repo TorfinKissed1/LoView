@@ -4,12 +4,13 @@ export function initLaviewSliders() {
 
   sliders.forEach((sliderEl) => {
     const isBeachesSlider = sliderEl.classList.contains('beaches__slider');
+    const isAutoHeightSlider = isBeachesSlider || sliderEl.classList.contains('roof__slider');
 
     const swiper = new Swiper(sliderEl, {
       slidesPerView: 1,
       speed: 1000,
       allowTouchMove: true,
-      autoHeight: isBeachesSlider,
+      autoHeight: isAutoHeightSlider,
       noSwiping: true,
       noSwipingSelector: '.beaches__slider-pagination, .beaches__slider-pagination *, .roof__slider-pagination, .roof__slider-pagination *',
       loop: sliderEl.classList.contains('laview-slider--loop'),
@@ -45,11 +46,27 @@ export function initLaviewSliders() {
 
     swiper.on('slideChange', () => {
       updateUI(swiper.realIndex ?? swiper.activeIndex);
-      if (isBeachesSlider) {
-        swiper.updateAutoHeight();
-      }
+      updateSliderHeight();
     });
 
+    function updateSliderHeight() {
+      if (isAutoHeightSlider) {
+        swiper.updateAutoHeight(300);
+      }
+    }
+
+    if (isAutoHeightSlider) {
+      swiper.on('imagesReady', updateSliderHeight);
+
+      sliderEl.querySelectorAll('img').forEach((img) => {
+        if (img.complete) return;
+        img.addEventListener('load', updateSliderHeight, { once: true });
+      });
+
+      window.addEventListener('resize', updateSliderHeight);
+    }
+
     updateUI(0);
+    updateSliderHeight();
   });
 }
