@@ -8,7 +8,7 @@
 @media (width <= 1350px) {
     .city-life__container {
     padding-block: 37px 171px;
-    background-position: right top;
+    background-position: 60% top;
     }
 }
 @media (width <= 360px) {
@@ -44,7 +44,7 @@ font-size: 32px;
 }
 @media (width <= 500px) {
     .city-life__title {
-        max-width: 75%;
+        max-width: 63%;
     }
 }
 
@@ -117,7 +117,7 @@ color: var(--light-brown-1);
 }
 @media (width <= 500px) {
 .city-life__list {
-    max-width: 63%;
+    max-width: 58%;
 }
 }
 @media (width <= 360px) {
