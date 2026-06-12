@@ -3,15 +3,11 @@ export function initVideoPopup() {
   const popup = document.getElementById('video-popup');
   const closeBtn = popup.querySelector('[data-video-close]');
   const video = popup.querySelector('.video-popup__video');
-  
+
+  if (!openBtn || !popup || !video) return;
+
   const vid1 = document.querySelector('.vid1');
-  console.log(vid1);
-
-  if (!openBtn || !popup) return;
-
-//  const VIDEO_SRC = './video/city-live-video.mov';
-
-const VIDEO_SRC = vid1.getAttribute('src');
+  const VIDEO_SRC = vid1?.getAttribute('src') || './video/city-live-video.mov';
  
 function openPopup() {
   popup.classList.add('active');
@@ -35,7 +31,7 @@ function closePopup() {
 }
 
   openBtn.addEventListener('click', openPopup);
-  closeBtn.addEventListener('click', closePopup);
+  closeBtn?.addEventListener('click', closePopup);
 
   popup.addEventListener('click', (e) => {
     if (e.target === popup) {
