@@ -4,6 +4,12 @@
     padding-block: 120px 81px;
 }
 
+@media (width <= 1536px) {
+    .container__perks {
+        padding-top: 96px;
+    }
+}
+
 @media (width <= 1000px) {
     .container__perks {
     padding-block: 40px 64px;
@@ -23,6 +29,12 @@
     color: var(--for-light-text);
 }
 
+@media (width <= 1536px) {
+    .perks__title {
+        margin-bottom: 40px;
+    }
+}
+
 @media (width <= 1000px) {
     .perks__title {
         margin-bottom: 40px;
@@ -34,7 +46,13 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 60px;
+    gap: 96px;
+}
+
+@media (width <= 1536px) {
+.perks__wrapper {
+    gap: 48px;
+}
 }
 
 @media (width <= 1000px) {
@@ -62,7 +80,7 @@
 
 @media (width <= 1000px) {
     .perks__slider-block {
-    position: static;
+        position: static;
     }
 }
 
@@ -88,7 +106,7 @@
 }
 
 .perks__slider-nav {
-    margin-top: 25px;
+    margin-top: 24px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -170,6 +188,7 @@ font-size: 16px;
     display: flex;
     flex-direction: column;
     gap: 48px;
+    padding-bottom: 104px;
 }
 @media (width <= 1300px) {
 .perks__list-wrapper {
@@ -180,6 +199,7 @@ flex: 0 0 300px;
 .perks__list-wrapper {
     max-width: 100%;
     flex-direction: row;
+    padding-bottom: 0;
 }
 }
 
