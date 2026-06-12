@@ -30,12 +30,12 @@
     margin-bottom: 16px;
 }
 }
-.lobby__description {
+.lobby__inner > p {
     max-width: 40%;
     font-size: 20px;
 }
 @media (width <= 768px) {
-    .lobby__description {
+    .lobby__inner > p {
     max-width: 100%;
     font-size: 16px;
 }

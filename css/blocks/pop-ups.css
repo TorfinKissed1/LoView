@@ -17,6 +17,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow: auto;
 }
 
 .popup.active {
@@ -32,6 +33,7 @@
   background: rgba(0, 0, 0, 0.5);
 
   opacity: 0;
+  position: fixed;
   transition: opacity var(--transition-time) ease-out;
 }
 
@@ -43,6 +45,7 @@
   position: relative;
   width: 100%;
   transition: transform var(--transition-time) ease-out, opacity var(--transition-time) ease-out;
+  margin: auto;
 }
 
 #map-popup {
@@ -271,7 +274,7 @@
   color: var(--dark-brown);
 }
 
-.popup__description {
+.popup--small .popup__content > p {
   margin-bottom: 16px;
   padding-inline: 16px;
   font-size: 16px;
@@ -279,21 +282,21 @@
   text-wrap: pretty;
 }
 
-.popup__list {
+.popup--small .popup__content > ul:not([class]) {
   padding-inline: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.popup__list-item {
+.popup--small .popup__content > ul:not([class]) > li {
   font-size: 16px;
   color: var(--dark-brown);
   display: flex;
   gap: 16px;
 }
 
-.popup__list-item::before {
+.popup--small .popup__content > ul:not([class]) > li::before {
   content: "";
   display: block;
   width: 8px;
@@ -361,6 +364,21 @@
   align-items: center;
 }
 
+@media (width > 768px) {
+  #layouts-popup.active {
+    align-items: flex-start;
+    padding-block: 32px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
+  }
+
+  #layouts-popup.active::before {
+    position: fixed;
+    inset: 0;
+  }
+}
+
 @media (width <=768px) {
   #layouts-popup {
     align-items: stretch;
@@ -381,6 +399,7 @@
 #layouts-popup.active .popup__content {
   transform: scale(1);
   opacity: 1;
+  z-index: 1;
 }
 
 .layouts-popup {
@@ -641,8 +660,17 @@
   text-transform: uppercase;
 }
 
+.layouts-popup__inputs input.is-invalid {
+  border-color: #C94A3A;
+  box-shadow: inset 0 0 0 1px #C94A3A;
+}
+
 .layouts-popup__inputs input:first-child {
   border-right: none;
+}
+
+.layouts-popup__inputs input.is-invalid:first-child {
+  border-right: 1px solid #C94A3A;
 }
 
 @media (width <=768px) {
@@ -772,6 +800,18 @@
   align-items: center;
 }
 
+#book-popup {
+  align-items: center;
+}
+
+#success-popup {
+  align-items: center;
+}
+
+#error-popup {
+  align-items: center;
+}
+
 .callback-popup {
   max-width: 660px;
   width: 92%;
@@ -790,6 +830,21 @@
   opacity: 1;
 }
 
+#book-popup.active .callback-popup {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#success-popup.active .callback-popup {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#error-popup.active .callback-popup {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .callback-popup__title {
   font-family: var(--second-family);
   font-size: 42px;
@@ -800,7 +855,7 @@
 }
 
 
-.callback-popup__text {
+.callback-popup > p {
   font-size: 18px;
   line-height: 1.4;
   color: var(--dark-brown);
@@ -828,6 +883,10 @@
   font-size: 16px;
   text-transform: uppercase;
   color: var(--dark-brown);
+}
+
+.callback-popup__inputs input.is-invalid {
+  box-shadow: inset 0 0 0 1px #C94A3A;
 }
 
 .callback-popup__inputs input::placeholder {
@@ -892,8 +951,74 @@
   transition: transform var(--transition-time) ease-out;
 }
 
+#book-popup .popup__close {
+  position: absolute;
+  top: 0px;
+  right: -90px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #F6F1EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-time) ease-out;
+}
+
+#success-popup .popup__close {
+  position: absolute;
+  top: 0px;
+  right: -90px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #F6F1EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-time) ease-out;
+}
+
+#error-popup .popup__close {
+  position: absolute;
+  top: 0px;
+  right: -90px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #F6F1EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-time) ease-out;
+}
+
 @media (width <=1000px) {
   #call-popup .popup__close {
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 0;
+  }
+  #book-popup .popup__close {
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 0;
+  }
+  #success-popup .popup__close {
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 0;
+  }
+  #error-popup .popup__close {
     top: 16px;
     right: 16px;
     width: 24px;
@@ -974,6 +1099,11 @@
   border-radius: 4px;
   background-color: transparent;
   transition: all 0.2s ease;
+}
+
+.callback-popup__checkbox.is-invalid span::before {
+  border-color: #C94A3A;
+  box-shadow: 0 0 0 1px #C94A3A;
 }
 
 

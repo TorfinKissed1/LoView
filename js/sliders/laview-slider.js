@@ -5,6 +5,7 @@ export function initLaviewSliders() {
   sliders.forEach((sliderEl) => {
     const isBeachesSlider = sliderEl.classList.contains('beaches__slider');
     const isAutoHeightSlider = isBeachesSlider || sliderEl.classList.contains('roof__slider');
+    const shouldRewind = sliderEl.classList.contains('laview-slider--loop');
 
     const swiper = new Swiper(sliderEl, {
       slidesPerView: 1,
@@ -13,7 +14,8 @@ export function initLaviewSliders() {
       autoHeight: isAutoHeightSlider,
       noSwiping: true,
       noSwipingSelector: '.beaches__slider-pagination, .beaches__slider-pagination *, .roof__slider-pagination, .roof__slider-pagination *',
-      loop: sliderEl.classList.contains('laview-slider--loop'),
+      loop: false,
+      rewind: shouldRewind,
 
       navigation: {
         nextEl: sliderEl.querySelector('.laview-slider__nav-button--next'),

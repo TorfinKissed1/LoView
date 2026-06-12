@@ -129,14 +129,14 @@
     }
 }
 
-.park__description {
+.park__content > p:not(.park__title-number) {
     font-weight: 300;
     font-size: 20px;
     color: var(--white);
 }
 
 @media (width <=1200px) {
-    .park__description {
+    .park__content > p:not(.park__title-number) {
         font-weight: 300;
         font-size: 16px;
     }

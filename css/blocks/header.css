@@ -68,6 +68,7 @@
     font-size: 18px;
     text-transform: uppercase;
     transition: color var(--transition-time);
+    cursor: pointer;
 }
 
 .header__link:hover {
@@ -321,6 +322,20 @@
     visibility: visible;
 }
 
+.header__burger-menu.burger-menu.is-open {
+    max-height: calc(100vh - 62px);
+    max-height: calc(100dvh - 62px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+@media (width <=970px) {
+    .header__burger-menu.burger-menu.is-open {
+        max-height: calc(100vh - 60px);
+        max-height: calc(100dvh - 60px);
+    }
+}
+
 @media (width <=768px) {
     .burger-menu.is-open {
         height: 100vh;
@@ -492,6 +507,12 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+@media (width <=1350px) {
+    .burger-menu__list {
+        gap: 12px;
+    }
 }
 
 @media (width <=970px) {

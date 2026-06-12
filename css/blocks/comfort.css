@@ -110,13 +110,13 @@
     }
 }
 
-.comfort__list-item-description {
+.comfort__list-item > p {
     font-size: 20px;
     color: var(--middle-brown);
 }
 
 @media (width <=768px) {
-    .comfort__list-item-description {
+    .comfort__list-item > p {
         font-size: 16px;
     }
 }
@@ -205,7 +205,7 @@
 }
 
 
-.comfort__parking-info-text {
+.comfort__parking-info > p {
     font-family: var(--third-family);
     font-weight: 300;
     font-size: 18px;
@@ -214,7 +214,7 @@
 }
 
 @media (width <=768px) {
-    .comfort__parking-info-text {
+    .comfort__parking-info > p {
         font-size: 14px;
     }
 }

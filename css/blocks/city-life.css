@@ -102,7 +102,7 @@ transition: color var(--transition-time) ease-out;
 .city-life__video-wrapper:hover .city-life__video-text {
 color: var(--light-brown-1);
 }
-.city-life__list {
+.city-life__content > ul {
     max-width: 42%;
     flex: 1;
     display: flex;
@@ -110,18 +110,18 @@ color: var(--light-brown-1);
     gap: 24px;
 }
 @media (width <= 1350px) {
-.city-life__list {
+.city-life__content > ul {
     gap: 16px;
     max-width: 300px;
 }
 }
 @media (width <= 500px) {
-.city-life__list {
+.city-life__content > ul {
     max-width: 58%;
 }
 }
 @media (width <= 360px) {
-.city-life__list {
+.city-life__content > ul {
     gap: 16px;
     max-width: 74%;
 }
@@ -130,7 +130,7 @@ color: var(--light-brown-1);
 @media (width <= 1350px) {
 
 }
-.city-life__list-item {
+.city-life__content > ul > li {
     font-size: 20px;
 color: var(--dark-brown);
 display: flex;
@@ -138,12 +138,12 @@ gap: 16px;
 }
 
 @media (width <= 1350px) {
-.city-life__list-item {
+.city-life__content > ul > li {
     font-size: 16px;
 }
 }
 
-.city-life__list-item::before {
+.city-life__content > ul > li::before {
     content: "";
     display: inline-flex;
     margin-top: 8px;

@@ -2,6 +2,7 @@ export function initHeaderMenu() {
   const menuBtn = document.querySelector('.header__link--menu');
   const mobileMenuBtn = document.querySelector('.header-mobile__burger');
   const burgerMenu = document.querySelector('.burger-menu');
+  const burgerMenuLinks = document.querySelectorAll('.burger-menu__link');
   const overlay = document.querySelector('.burger-overlay');
   const mobileLogo = document.querySelector('.header-mobile__logo-link');
 
@@ -76,5 +77,16 @@ export function initHeaderMenu() {
       closeMenu();
     }
     isSwiping = false;
+  });
+
+  burgerMenuLinks.forEach(function(curLink) {
+    curLink.addEventListener('click', closeMenu);
+  });
+
+  document.querySelectorAll('.burger-menu__button-apartments').forEach(function(curLink) {
+    curLink.addEventListener('click', function() {
+        window.location.hash = curLink.getAttribute('data-href');
+        closeMenu();
+    });
   });
 }

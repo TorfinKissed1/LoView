@@ -149,7 +149,7 @@ font-weight: 300;
 }
 }
 
-.architecture__subtitle {
+.architecture__titles-wrapper p {
     font-family: var(--second-family);
 font-weight: 300;
 font-size: 48px;
@@ -159,19 +159,19 @@ color: var(--for-light-text);
 text-wrap: balance;
 }
 
-.architecture__subtitle span {
+.architecture__titles-wrapper p span {
     color: #BBADA1;
 }
 
 @media (width <=1000px) {
-.architecture__subtitle {
+.architecture__titles-wrapper p {
 font-size: 28px;
 padding-right: 0px;
 }
 }
 
 @media (width <= 360px) {
-.architecture__subtitle {
+.architecture__titles-wrapper p {
 padding-right: 0px;
 }
 }
@@ -214,27 +214,27 @@ padding-right: 0px;
         gap: 16px;
     }
 }
-.architecture__list {
+.architecture__list-text-wrapper ul {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 @media (width <=1000px) {
-.architecture__list {
+.architecture__list-text-wrapper ul {
         padding-right: 0px;
 }
 }
 @media (width <= 360px) {
-.architecture__list {
+.architecture__list-text-wrapper ul {
         padding-right: 0px;
     gap: 16px;
 }
 }
-.architecture__list-item {
+.architecture__list-text-wrapper li {
     display: flex;
     gap: 8px;
 }
-.architecture__list-item::before {
+.architecture__list-text-wrapper li::before {
     content: "";
     display: inline-block;
     margin: 8px 8px 8px 0px;

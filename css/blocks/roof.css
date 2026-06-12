@@ -20,16 +20,22 @@ gap: 40px;
 .roof__title {
 
 }
-.roof__description {
-        max-width: 65%;
+.roof__header > p {
+    max-width: 65%;
     margin-bottom: 32px;
+    font-family: var(--second-family);
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 124%;
+    text-transform: uppercase;
 }
 @media (width <= 768px) {
-    .roof__description {
+    .roof__header > p {
         max-width: 100%;
+        font-size: 28px;
     }
 }
-.roof__description span {
+.roof__header > p span {
 color: var(--brown);
 }
 .roof__info-wrapper {
@@ -48,10 +54,18 @@ color: var(--brand-brown);
 font-size: 48px;
     }
 }
-.roof__info-text {
+.roof__info-wrapper p {
     font-size: 22px;
 letter-spacing: 0.02em;
 text-transform: uppercase;
+}
+
+.roof__slider-nav-button:active {
+    transform: none;
+}
+
+.roof__slider-nav-button--prev:active {
+    transform: scaleX(-1);
 }
 
 @media (width <= 1000px) {
@@ -74,7 +88,7 @@ text-transform: uppercase;
 }
 
 @media (width <= 768px) {
-    .roof__info-text {
+    .roof__info-wrapper p {
 font-size: 14px;
     }
 }

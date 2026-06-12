@@ -3,11 +3,16 @@ export function initVideoPopup() {
   const popup = document.getElementById('video-popup');
   const closeBtn = popup.querySelector('[data-video-close]');
   const video = popup.querySelector('.video-popup__video');
+  
+  const vid1 = document.querySelector('.vid1');
+  console.log(vid1);
 
   if (!openBtn || !popup) return;
 
-  const VIDEO_SRC = './video/city-live-video.mov';
+//  const VIDEO_SRC = './video/city-live-video.mov';
 
+const VIDEO_SRC = vid1.getAttribute('src');
+ 
 function openPopup() {
   popup.classList.add('active');
   popup.setAttribute('aria-hidden', 'false');
