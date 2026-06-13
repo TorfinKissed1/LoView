@@ -66,6 +66,12 @@
     gap: 32px;
 }
 
+@media (width <=1279px) {
+    .footer__logo-wrapper {
+        padding-left: 0;
+    }
+}
+
 .footer__logo-link {}
 
 .footer__logo {}
