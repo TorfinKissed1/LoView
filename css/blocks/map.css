@@ -89,6 +89,12 @@
     color: var(--brown-darken);
 }
 
+@media (width >1279px) {
+    .map__zoom-button:active {
+        transform: translate(-50%, -50%) scale(0.97);
+    }
+}
+
 @media (width <=1790px) {
     .map__zoom-button {
         width: 64px;
