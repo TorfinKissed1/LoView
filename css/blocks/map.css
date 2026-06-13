@@ -1,11 +1,18 @@
 .map {
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
-    background: url(../../images/map-img.png) no-repeat top left / auto;
+    aspect-ratio: 1920 / 1300;
+    min-height: max-content;
+    background-color: var(--background-color);
+    background-image: url(../../images/map-img.png);
+    background-repeat: no-repeat;
+    background-size: auto 88.31%;
+    background-position: left top;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map {
+        aspect-ratio: auto;
         background: url(../../images/map-img.png) no-repeat top right / auto;
         background-position-x: 30%;
     }
@@ -13,6 +20,7 @@
 
 @media (width <=768px) {
     .map {
+        aspect-ratio: auto;
         background: var(--background-color);
         display: flex;
         flex-direction: column;
@@ -22,20 +30,14 @@
 .map__zoom-area {
     position: absolute;
     z-index: 10;
-    top: 284px;
-    left: 694px;
-    width: 428px;
-    height: 312px;
+    top: 18.77%;
+    left: 36.15%;
+    width: 22.3%;
+    height: 24%;
     cursor: pointer;
 }
 
-@media (width <=1700px) {
-    .map__zoom-area {
-top: 290px;
-    }
-}
-
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__zoom-area {
         top: 280px;
         left: 410px;
@@ -67,8 +69,9 @@ top: 290px;
 
 .map__zoom-button {
     position: absolute;
-    top: 403px;
-    left: 1079px;
+    top: 30.15%;
+    left: 58.35%;
+    transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
     display: flex;
@@ -83,24 +86,28 @@ top: 290px;
 }
 
 .map__zoom-button:hover {
-    color: var(--brown-darken);;
+    color: var(--brown-darken);
 }
 
-@media (width <=1180px) {
+@media (width <=1790px) {
+    .map__zoom-button {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (width <=1279px) {
     .map__zoom-button {
         top: 16px;
         right: 16px;
         left: auto;
+        transform: none;
         width: 48px;
         height: 48px;
     }
 }
 
-.map__zoom-icon {
-    
-}
-
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__zoom-icon {
         width: 19px;
         height: 19px;
@@ -115,8 +122,8 @@ top: 290px;
     .map__scroll {
     overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: block;
 }
 
@@ -208,19 +215,11 @@ top: 290px;
 }
 
 .map__container {
-        min-height: 1148px;
-    /* padding: 200px 81px 90px; */
     display: flex;
     justify-content: flex-end;
 }
 
-@media (width <=1700px) {
-    .map__container {
-        /* padding: 40px 0px 60px; */
-    }
-}
-
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__container {
         padding: 80% 0px 64px;
         display: flex;
@@ -241,30 +240,44 @@ top: 290px;
 }
 
 .map__inner {
-    padding-bottom: 135px;
-    max-width: 33.2%;
+    width: min(564px, 33%);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     gap: 42px;
+    padding-top: max(320px, 16.67%);
+    padding-bottom: 48px;
 }
 
-@media (width <=1700px) {
+@media (width <=1790px) {
     .map__inner {
-        max-width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 500px;
-    margin-left: auto;
-}
+        width: min(477px, 32%);
+        gap: 28px;
+        padding-top: clamp(160px, calc(40.2vw - 389.5px), 280px);
+    }
 }
 
-@media (width <=1180px) {
+@media (width <=1366px) {
     .map__inner {
+        width: min(363px, 30%);
+        padding-top: clamp(128px, calc(82.75vw - 930px), 200px);
+    }
+}
+
+@media (width <=1280px) {
+    .map__inner {
+        width: min(385px, 33%);
+        padding-top: 150px;
+    }
+}
+
+@media (width <=1279px) {
+    .map__inner {
+        width: auto;
         max-width: 60%;
         gap: 32px;
         margin-left: 30%;
+        padding-top: 0;
+        padding-bottom: 135px;
     }
 }
 
@@ -281,39 +294,44 @@ top: 290px;
 }
 
 .map__title {
-
+    max-width: 544px;
+    font-size: 36px;
 }
 
-@media (width <=1930px) {
+@media (width <=1790px) {
     .map__title {
-     font-size: 30px;
-     margin-top: 20px;
+        font-size: 28px;
     }
 }
 
-@media (width <=1180px) {
+@media (width <=1366px) {
     .map__title {
         font-size: 24px;
-        margin-top: 0;
     }
 }
 
 .map__info {
     position: relative;
-    max-width: 80%;
+    width: 76.3%;
     display: flex;
     flex-direction: column;
     gap: 55px;
 }
 
-@media (width <=1700px) {
+@media (1280px <= width <=1790px) {
     .map__info {
-    align-self: flex-end;
-    margin-top: 110px;
-}
+        width: 74%;
+        gap: 40px;
+    }
 }
 
-@media (width <=1180px) {
+@media (1280px <= width <=1366px) {
+    .map__info {
+        width: 100%;
+    }
+}
+
+@media (width <=1279px) {
     .map__info {
         width: 100%;
         gap: 32px;
@@ -343,7 +361,11 @@ top: 290px;
   opacity: 1;
 }
 
-
+@media (1280px <= width <=1790px) {
+    .map__slide {
+        gap: 40px;
+    }
+}
 
 .map__info-section {
     display: flex;
@@ -354,7 +376,7 @@ top: 290px;
   flex-shrink: 0;
 }
 
-@media (width <=1180px) {
+@media (width <=1790px) {
     .map__info-section {
         gap: 16px;
     }
@@ -365,7 +387,7 @@ top: 290px;
     flex-direction: column;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__info-section-icons-wrapper {
         padding-right: 23.5%;
     }
@@ -375,7 +397,7 @@ top: 290px;
     width: 292px;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__walking-icons-wrapper {
         width: 100%;
     }
@@ -386,7 +408,7 @@ top: 290px;
     transition: opacity var(--transition-time) ease-out;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__walking-icon {
         width: 18px;
         height: 32px;
@@ -413,7 +435,7 @@ top: 290px;
     justify-content: space-between;
 }
 
-@media (width <=1180px) {
+@media (width <=1790px) {
     .map__info-section li {
         font-size: 16px;
     }
@@ -423,7 +445,7 @@ top: 290px;
     width: 273px;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__car-icons-wrapper {
         width: 100%;
     }
@@ -434,7 +456,7 @@ top: 290px;
     transition: opacity var(--transition-time) ease-out;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__car-icon {
         width: 45px;
         height: 18px;
@@ -459,7 +481,7 @@ top: 290px;
     color: var(--brown-darken);
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__button {
         width: 65%;
         padding: 10px;
@@ -480,7 +502,7 @@ top: 290px;
     height: 26px;
 }
 
-@media (width <=1180px) {
+@media (width <=1279px) {
     .map__button-icon {
         width: 23px;
         height: 23px;

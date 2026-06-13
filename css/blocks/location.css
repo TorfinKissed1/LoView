@@ -8,6 +8,26 @@
     padding-bottom: 155px;
 }
 
+@media (width <=1536px) {
+    .location__container {
+        padding-top: 56px;
+        padding-bottom: 135px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__container {
+        padding-bottom: 90px;
+    }
+}
+
+@media (width <=1280px) {
+    .location__container {
+        padding-top: 40px;
+        padding-bottom: 82px;
+    }
+}
+
 @media (width <=1000px) {
     .location__container {
         padding: 81px 60px 213px;
@@ -31,6 +51,25 @@
     flex-direction: column;
     gap: 32px;
     padding-left: 153px;
+}
+
+@media (width <=1536px) {
+    .location__inner {
+        gap: 24px;
+        padding-left: 103px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__inner {
+        padding-left: 89px;
+    }
+}
+
+@media (width <=1280px) {
+    .location__inner {
+        padding-left: 80px;
+    }
 }
 
 @media (width <=1000px) {
@@ -68,6 +107,19 @@
     color: var(--white);
 }
 
+@media (width <=1536px) {
+    .location__title {
+        margin-bottom: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__title {
+        font-size: 16px;
+    }
+}
+
 @media (width <=768px) {
     .location__title {
         margin-bottom: 24px;
@@ -82,6 +134,27 @@
     line-height: 100%;
     text-transform: uppercase;
     color: var(--white);
+}
+
+@media (width <=1536px) {
+    .location__titles-wrapper p {
+        max-width: 666px;
+        font-size: 56px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__titles-wrapper p {
+        max-width: 564px;
+        font-size: 48px;
+    }
+}
+
+@media (width <=1280px) {
+    .location__titles-wrapper p {
+        max-width: 471px;
+        font-size: 40px;
+    }
 }
 
 @media (width <=768px) {
@@ -106,6 +179,21 @@
     color: var(--white);
 }
 
+@media (width <=1536px) {
+    .location__content p {
+        margin-bottom: 24px;
+        max-width: 519px;
+        font-size: 18px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__content p {
+        max-width: 418px;
+        font-size: 16px;
+    }
+}
+
 @media (width <=768px) {
     .location__content p {
         display: none;
@@ -116,6 +204,12 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+@media (width <=1536px) {
+    .location__content ul {
+        gap: 4px;
+    }
 }
 
 @media (width <=768px) {
@@ -129,6 +223,18 @@
     color: var(--white);
     display: flex;
     gap: 16px;
+}
+
+@media (width <=1536px) {
+    .location__content li {
+        font-size: 18px;
+    }
+}
+
+@media (width <=1366px) {
+    .location__content li {
+        font-size: 16px;
+    }
 }
 
 .location__content li::before {

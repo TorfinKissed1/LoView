@@ -2,11 +2,32 @@
     background: linear-gradient(180deg, #f4f4f2 80.77%, #fff 100%);
 }
 .city-life__container {
-    padding: 136px 151px 270px;
+    aspect-ratio: 2 / 1;
+    min-height: max-content;
+    padding: 136px 151px 48px;
     background: url(../../images/city-life-img.png) no-repeat center / cover;
 }
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
     .city-life__container {
+        width: calc(100% - 120px);
+        padding-block: 82px 48px;
+        padding-inline: 103px !important;
+    }
+}
+@media (1280px <= width <= 1366px) {
+    .city-life__container {
+        padding-inline: 89px !important;
+    }
+}
+@media (1280px <= width <= 1281px) {
+    .city-life__container {
+        padding-inline: 82px !important;
+    }
+}
+@media (width <= 1279px) {
+    .city-life__container {
+    aspect-ratio: auto;
+    min-height: auto;
     padding-block: 37px 171px;
     background-position: 60% top;
     }
@@ -23,6 +44,11 @@
     flex-direction: column;
     gap: 40px;
 }
+@media (1280px <= width <= 1800px) {
+    .city-life__inner {
+        max-width: none;
+    }
+}
 @media (width <= 500px) {
     .city-life__inner {
         max-width: 100%;
@@ -37,7 +63,25 @@ line-height: 100%;
 text-transform: uppercase;
 color: var(--brand-brown);
 }
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
+    .city-life__title {
+        max-width: 510px;
+        font-size: 56px;
+    }
+}
+@media (1280px <= width <= 1366px) {
+    .city-life__title {
+        max-width: 490px;
+        font-size: 48px;
+    }
+}
+@media (1280px <= width <= 1281px) {
+    .city-life__title {
+        max-width: 360px;
+        font-size: 40px;
+    }
+}
+@media (width <= 1279px) {
 .city-life__title {
 font-size: 32px;
 }
@@ -52,7 +96,12 @@ font-size: 32px;
     display: flex;
     gap: 48px;
 }
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
+.city-life__content {
+    gap: 32px;
+}
+}
+@media (width <= 1279px) {
 .city-life__content {
     gap: 24px;
 }
@@ -68,7 +117,19 @@ width: 100%;
 min-height: 262px;
 overflow: hidden;
 }
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
+    .city-life__video-wrapper {
+        max-width: 353px;
+        min-height: 226px;
+    }
+}
+@media (1280px <= width <= 1366px) {
+    .city-life__video-wrapper {
+        max-width: 295px;
+        min-height: 189px;
+    }
+}
+@media (width <= 1279px) {
     .city-life__video-wrapper {
         display: none;
     }
@@ -92,12 +153,23 @@ overflow: hidden;
     z-index: 2;
 }
 .city-life__video-icon {}
+@media (1280px <= width <= 1800px) {
+    .city-life__video-icon {
+        width: 64px;
+        height: 64px;
+    }
+}
 .city-life__video-text {
     font-weight: 400;
 font-size: 18px;
 text-transform: uppercase;
 color: var(--white);
 transition: color var(--transition-time) ease-out;
+}
+@media (1280px <= width <= 1366px) {
+    .city-life__video-text {
+        font-size: 16px;
+    }
 }
 .city-life__video-wrapper:hover .city-life__video-text {
 color: var(--light-brown-1);
@@ -109,7 +181,18 @@ color: var(--light-brown-1);
     flex-direction: column;
     gap: 24px;
 }
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
+.city-life__content > ul {
+    max-width: 349px;
+}
+}
+@media (1280px <= width <= 1366px) {
+.city-life__content > ul {
+    max-width: 307px;
+    gap: 16px;
+}
+}
+@media (width <= 1279px) {
 .city-life__content > ul {
     gap: 16px;
     max-width: 300px;
@@ -127,9 +210,6 @@ color: var(--light-brown-1);
 }
 }
 
-@media (width <= 1350px) {
-
-}
 .city-life__content > ul > li {
     font-size: 20px;
 color: var(--dark-brown);
@@ -137,7 +217,19 @@ display: flex;
 gap: 16px;
 }
 
-@media (width <= 1350px) {
+@media (1280px <= width <= 1800px) {
+.city-life__content > ul > li {
+    font-size: 18px;
+}
+}
+
+@media (1280px <= width <= 1366px) {
+.city-life__content > ul > li {
+    font-size: 16px;
+}
+}
+
+@media (width <= 1279px) {
 .city-life__content > ul > li {
     font-size: 16px;
 }
@@ -159,7 +251,7 @@ background: var(--dark-brown);
     background: var(--white);
 }
 
-@media (width <= 1350px) {
+@media (width <= 1279px) {
     .video {
     display: block;
     padding-block: 40px;
