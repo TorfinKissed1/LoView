@@ -351,3 +351,139 @@
         margin-top: 24px;
     }
 }
+
+@media (width >1536px) {
+    .footer__middle {
+        padding-bottom: 21px;
+    }
+
+    .footer__bottom {
+        margin-block: 26px 0;
+    }
+}
+
+@media (1280px <= width <=1536px) {
+    .footer__container.container {
+        padding: 72px 40px 9px !important;
+    }
+
+    .footer__top {
+        margin-bottom: 39px;
+    }
+
+    .footer__menu {
+        gap: 8px;
+    }
+
+    .footer__logo-wrapper {
+        padding-left: 0;
+        gap: 24px;
+    }
+
+    .footer__logo {
+        width: 138px;
+    }
+
+    .footer__tel-link {
+        font-size: 64px;
+    }
+
+    .footer__button {
+        width: 305px;
+        height: 64px;
+        padding: 0;
+    }
+
+    .footer__contacts {
+        max-width: none;
+        gap: 8px;
+    }
+
+    .footer__contacts-info {
+        font-family: var(--font-family);
+        font-size: 18px;
+        line-height: normal;
+        text-transform: uppercase;
+        color: var(--middle-brown);
+    }
+
+    .footer__contacts-socials {
+        margin-top: 16px;
+        gap: 16px;
+    }
+
+    .footer__contacts-social-link,
+    .footer__contacts-social-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .footer__middle {
+        padding-bottom: 31px;
+    }
+
+    .footer__middle-text {
+        width: 1088px;
+        max-width: calc(100% - 104px);
+        font-size: 12px;
+    }
+
+    .footer__middle-button {
+        padding-top: 13px;
+        width: 64px;
+        height: 64px;
+        font-size: 12px;
+    }
+
+    .footer__middle-button-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer__bottom {
+        gap: 56px;
+        margin-block: 8px 0;
+        padding-block: 20px;
+        font-size: 12px;
+    }
+
+    .footer__bottom-text,
+    .footer__bottom-link,
+    .footer__bottom-cop {
+        white-space: nowrap;
+    }
+
+    .footer__bottom-link {
+        font-size: 12px;
+    }
+}
+
+@media (1280px <= width <=1366px) {
+    .footer__top {
+        margin-bottom: 49px;
+    }
+
+    .footer__menu-link,
+    .footer__contacts-title,
+    .footer__contacts-link {
+        font-size: 16px;
+    }
+
+    .footer__contacts-info {
+        font-size: 16px;
+    }
+
+    .footer__middle-text {
+        width: 1074px;
+    }
+
+    .footer__bottom {
+        gap: 35px;
+    }
+}
+
+@media (1280px <= width <=1320px) {
+    .footer__bottom {
+        gap: 20px;
+    }
+}
