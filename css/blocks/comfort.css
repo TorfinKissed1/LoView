@@ -12,7 +12,7 @@
     }
 }
 
-@media (width <=1300px) {
+@media (width <=1279px) {
     .comfort__container {
         padding-block: 64px 63px;
     }
@@ -133,7 +133,7 @@
     }
 }
 
-@media (width <=1300px) {
+@media (width <=1279px) {
     .comfort__parking {
         gap: 40px;
     }
@@ -156,7 +156,7 @@
     }
 }
 
-@media (width <=1300px) {
+@media (width <=1279px) {
     .comfort__parking-video-wrapper {
         min-height: 426px;
     }
@@ -235,7 +235,7 @@
     gap: 64px;
 }
 
-@media (width <=1300px) {
+@media (width <=1279px) {
     .comfort__parking-list {
         max-width: 65%;
         gap: 16px;
@@ -298,5 +298,134 @@
 @media (width <=600px) {
     .comfort__parking {
         flex-direction: column;
+    }
+}
+
+@media (1280px <= width <= 1800px) {
+    .comfort__container {
+        padding-block: 96px 64px;
+    }
+
+    .comfort__inner {
+        padding-right: 0;
+        gap: 64px;
+    }
+
+    .comfort__subtitle {
+        font-size: 40px;
+    }
+
+    .comfort__list {
+        gap: 120px;
+    }
+
+    .comfort__list-item {
+        gap: 16px;
+    }
+
+    .comfort__list-item-icon-wrapper {
+        width: 64px;
+        height: 64px;
+    }
+
+    .comfort__list-item-title {
+        font-size: 28px;
+    }
+
+    .comfort__list-item > p {
+        font-size: 18px;
+    }
+
+    .comfort__parking {
+        gap: 82px;
+    }
+
+    .comfort__parking-video-wrapper {
+        min-height: 463px;
+        padding: 32px;
+    }
+
+    .comfort__parking-info {
+        gap: 16px;
+    }
+
+    .comfort__parking-info--margin {
+        margin-bottom: 24px;
+    }
+
+    .comfort__parking-info-number {
+        font-size: 64px;
+    }
+
+    .comfort__parking-info > p {
+        font-size: 16px;
+    }
+
+    .comfort__parking-list {
+        width: 311px;
+        max-width: 311px;
+        flex-shrink: 0;
+        gap: 60px;
+    }
+
+    .comfort__parking-list-item {
+        font-size: 18px;
+    }
+
+    .comfort__parking-list-item-icon-wrapper {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (1280px <= width <= 1366px) {
+    .comfort__container {
+        padding-block: 64px 56px;
+    }
+
+    .comfort__subtitle {
+        font-size: 36px;
+    }
+
+    .comfort__list {
+        gap: 64px;
+    }
+
+    .comfort__list-item-title {
+        font-size: 24px;
+    }
+
+    .comfort__list-item > p {
+        font-size: 16px;
+    }
+
+    .comfort__parking {
+        gap: 75px;
+    }
+
+    .comfort__parking-video-wrapper {
+        min-height: 409px;
+    }
+
+    .comfort__parking-info-number {
+        font-size: 56px;
+    }
+
+    .comfort__parking-info > p {
+        font-size: 14px;
+    }
+
+    .comfort__parking-list {
+        gap: 52px;
+    }
+
+    .comfort__parking-list-item {
+        font-size: 16px;
+    }
+}
+
+@media (1280px <= width <= 1281px) {
+    .comfort__parking-video-wrapper {
+        min-height: 384px;
     }
 }

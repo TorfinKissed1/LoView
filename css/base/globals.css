@@ -260,6 +260,20 @@ font-size: 16px;
 }
 }
 
+@media (769px <= width <= 1536px) {
+  .laview-slider__slide-title {
+    font-size: 40px;
+  }
+
+  .laview-slider__slide-description {
+    font-size: 18px;
+  }
+
+  .laview-slider__slide-number {
+    font-size: 36px;
+  }
+}
+
 .laview-slider__pagination {
   z-index: 1;
   position: absolute;

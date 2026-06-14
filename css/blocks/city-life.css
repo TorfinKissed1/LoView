@@ -114,19 +114,22 @@ font-size: 32px;
   border-radius: 8px;
 max-width: 410px;
 width: 100%;
-min-height: 262px;
+aspect-ratio: 410 / 262;
 overflow: hidden;
 }
 @media (1280px <= width <= 1800px) {
     .city-life__video-wrapper {
-        max-width: 353px;
-        min-height: 226px;
+        max-width: min(384px, 29%);
     }
 }
 @media (1280px <= width <= 1366px) {
     .city-life__video-wrapper {
-        max-width: 295px;
-        min-height: 189px;
+        max-width: 27.6%;
+    }
+}
+@media (1280px <= width <= 1281px) {
+    .city-life__video-wrapper {
+        max-width: 29.6%;
     }
 }
 @media (width <= 1279px) {
@@ -183,13 +186,18 @@ color: var(--light-brown-1);
 }
 @media (1280px <= width <= 1800px) {
 .city-life__content > ul {
-    max-width: 349px;
+    max-width: min(398px, 29%);
 }
 }
 @media (1280px <= width <= 1366px) {
 .city-life__content > ul {
-    max-width: 307px;
+    max-width: 28.7%;
     gap: 16px;
+}
+}
+@media (1280px <= width <= 1281px) {
+.city-life__content > ul {
+    max-width: 30.8%;
 }
 }
 @media (width <= 1279px) {

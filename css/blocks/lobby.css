@@ -58,3 +58,35 @@
   width: 100%;
   height: auto;
 }
+
+@media (769px <= width <= 1800px) {
+    .lobby__subtitle {
+        max-width: 85%;
+        font-size: 40px;
+    }
+
+    .lobby__inner > p {
+        max-width: 55%;
+        font-size: 18px;
+    }
+
+    .lobby__img-wrapper {
+        margin-top: 56px;
+    }
+
+    .lobby__img {
+        min-width: 0;
+        height: 348px;
+    }
+}
+
+@media (769px <= width <= 1366px) {
+    .lobby__subtitle {
+        font-size: 36px;
+    }
+
+    .lobby__inner > p {
+        max-width: 60%;
+        font-size: 16px;
+    }
+}
