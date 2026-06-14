@@ -33,7 +33,7 @@ export function initBeachesSlider() {
     });
   }
 
-  const mql = window.matchMedia('(max-width: 1000px)');
+  const mql = window.matchMedia('(max-width: 1200px)');
 
   function positionPagination() {
     if (!pagination) return;
