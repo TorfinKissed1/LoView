@@ -12,6 +12,7 @@ export function initArchitectureParallax() {
   let sectionH = 0;
   let houseH = 0;
   let contentH = 0;
+  let amp = 0;
 
   function syncResponsiveStructure() {
     if (!imgWrapper || !desktopTitles || !listWrapper) return;
@@ -39,8 +40,8 @@ export function initArchitectureParallax() {
     houseH = img.offsetHeight;
     contentH = content.offsetHeight;
 
-    const travel = Math.round(houseH * 0.3);
-    sectionH = Math.max(houseH, contentH) + travel;
+    amp = Math.max(110, Math.min(180, Math.round(houseH * 0.15)));
+    sectionH = Math.max(houseH, contentH) + Math.round(amp * 1.6);
     section.style.height = sectionH + 'px';
 
     update();
@@ -54,11 +55,11 @@ export function initArchitectureParallax() {
 
     if (rect.bottom < 0 || rect.top > windowHeight) return;
 
-    let progress = (windowHeight - rect.top) / sectionH;
+    let progress = (windowHeight - rect.top) / (windowHeight + sectionH);
     progress = Math.max(0, Math.min(1, progress));
 
-    const imgMove = progress * (sectionH - houseH);
-    const contentMove = progress * (sectionH - contentH);
+    const imgMove = progress * amp;
+    const contentMove = amp * (1.6 - 0.6 * progress);
 
     img.style.transform = `translateY(${imgMove}px)`;
     content.style.transform = `translateY(${contentMove}px)`;
