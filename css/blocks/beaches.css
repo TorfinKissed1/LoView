@@ -414,6 +414,14 @@
         padding-bottom: clamp(56px, calc(15vw - 150px), 120px);
     }
 
+    .beaches__content {
+        max-width: 59%;
+    }
+
+    .beaches__description {
+        max-width: 100%;
+    }
+
     .beaches__title {
         font-size: 64px;
     }
