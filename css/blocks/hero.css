@@ -137,6 +137,24 @@
     }
 }
 
+@media (1367px <= width <= 1536px) {
+    .hero__number {
+        font-size: 67px;
+    }
+}
+
+@media (1281px <= width <= 1366px) {
+    .hero__number {
+        font-size: 64px;
+    }
+}
+
+@media (769px <= width <= 1280px) {
+    .hero__number {
+        font-size: 56px;
+    }
+}
+
 .hero__text {
     margin-bottom: 10px;
     font-family: var(--second-family);

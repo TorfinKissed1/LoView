@@ -189,6 +189,23 @@
     }
 }
 
+@media (1367px <= width <=1536px) {
+    .header__middle-text {
+        font-size: 18px;
+    }
+}
+
+@media (971px <= width <=1366px) {
+    .header__middle-text {
+        font-size: 16px;
+    }
+
+    .header__phone,
+    .header__link {
+        font-size: 16px;
+    }
+}
+
 .header__bottom {
     display: none;
 }
