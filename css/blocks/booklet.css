@@ -92,6 +92,11 @@ padding: 14px 64px;
 font-size: 14px;
 }
 }
+@media (1131px <= width <= 1280px) {
+    .booklet__button {
+        font-size: 16px;
+    }
+}
 @media (width <= 768px) {
 .booklet__button {
 margin-left: 0;
