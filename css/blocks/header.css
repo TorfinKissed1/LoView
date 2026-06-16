@@ -718,6 +718,16 @@
     }
 }
 
+@media (970px < width <=1536px) {
+    .burger-menu__address {
+        font-size: 16px;
+    }
+
+    .burger-menu__link-secondary {
+        font-size: 16px;
+    }
+}
+
 .burger-overlay {
     position: fixed;
     inset: 0;
