@@ -487,6 +487,12 @@
     color: var(--brown-darken);
 }
 
+@media (width <=1790px) {
+    .map__button {
+        font-size: 16px;
+    }
+}
+
 @media (width <=1279px) {
     .map__button {
         width: 65%;

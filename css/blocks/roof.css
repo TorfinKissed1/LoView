@@ -114,6 +114,10 @@ font-size: 14px;
         padding-top: 96px;
     }
 
+    .roof__title {
+        font-size: 18px;
+    }
+
     .roof__header > p {
         max-width: 70%;
         margin-bottom: 24px;
@@ -129,6 +133,12 @@ font-size: 14px;
     }
 }
 
+@media (769px <= width <= 1536px) {
+    .roof__slider-pagination-button {
+        font-size: 16px;
+    }
+}
+
 @media (769px <= width <= 1366px) {
     .roof__container {
         padding-top: 64px;
@@ -136,6 +146,10 @@ font-size: 14px;
 
     .roof__inner {
         gap: 64px;
+    }
+
+    .roof__title {
+        font-size: 16px;
     }
 
     .roof__header > p {
@@ -148,6 +162,14 @@ font-size: 14px;
     }
 
     .roof__info-wrapper p {
+        font-size: 16px;
+    }
+
+    .roof__slide-title {
+        font-size: 36px;
+    }
+
+    .roof__slide-description {
         font-size: 16px;
     }
 }

@@ -389,6 +389,12 @@
 
 @media (1280px <= width <= 1800px) {
     .services__content-list-item-title {
+        font-size: 18px;
+    }
+}
+
+@media (1280px <= width <= 1366px) {
+    .services__content-list-item-title {
         font-size: 16px;
     }
 }
@@ -401,15 +407,21 @@
 }
 
 .services__content-list-item p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20.4px;
     text-wrap: pretty;
 }
 
 @media (1280px <= width <= 1800px) {
     .services__content-list-item p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 18px;
+    }
+}
+
+@media (width <=1279px) {
+    .services__content-list-item p {
+        font-size: 16px;
     }
 }
 

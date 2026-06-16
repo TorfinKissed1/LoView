@@ -388,3 +388,19 @@ padding-right: 0px;
         gap: 16px;
     }
 }
+
+@media (width >= 1537px) {
+    .architecture__title {
+        font-size: 22px;
+    }
+}
+
+@media (1001px <= width <= 1536px) {
+    .architecture__title {
+        font-size: 16px;
+    }
+
+    .architecture__list-text-wrapper {
+        font-size: 16px;
+    }
+}

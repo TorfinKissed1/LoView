@@ -225,7 +225,7 @@
     margin-top: 186px;
     font-family: var(--second-family);
     font-weight: 300;
-    font-size: 64px;
+    font-size: 80px;
     line-height: 100%;
     text-transform: uppercase;
     color: var(--white);
@@ -299,8 +299,8 @@
 
 .beaches__slider-title span {
     font-weight: 200;
-    line-height: 110%;
-    font-size: 200px;
+    line-height: 100%;
+    font-size: 220px;
 }
 
 .beaches__slider-button--prev {
@@ -447,21 +447,29 @@
     .beaches__slider-title {
         margin-left: clamp(81px, calc(11vw - 60px), 150px);
         margin-top: 150px;
-        font-size: 52px;
+        font-size: 64px;
     }
 
     .beaches__slider-title span {
-        font-size: 160px;
+        font-size: 150px;
     }
 }
 
 @media (1201px <= width <= 1366px) {
     .beaches__title {
-        font-size: 56px;
+        font-size: 48px;
+    }
+
+    .beaches__description {
+        font-size: 16px;
+    }
+
+    .beaches__slider-pagination .slider-pagination__button {
+        font-size: 16px;
     }
 
     .beaches__remark {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .beaches__note {
@@ -478,7 +486,7 @@
 
     .beaches__slider-title {
         margin-top: 120px;
-        font-size: 48px;
+        font-size: 64px;
     }
 
     .beaches__slider-title span {
@@ -501,10 +509,10 @@
 
     .beaches__slider-title {
         margin-top: 100px;
-        font-size: 44px;
+        font-size: 64px;
     }
 
     .beaches__slider-title span {
-        font-size: 140px;
+        font-size: 150px;
     }
 }

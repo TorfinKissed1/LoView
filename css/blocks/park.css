@@ -109,13 +109,13 @@
 
 @media (1280px <= width <= 1800px) {
     .park__title-number {
-        font-size: 176px;
+        font-size: 175px;
     }
 }
 
 @media (1280px <= width <= 1366px) {
     .park__title-number {
-        font-size: 148px;
+        font-size: 150px;
     }
 }
 
@@ -168,6 +168,12 @@
 }
 
 @media (1280px <= width <= 1800px) {
+    .park__content > p:not(.park__title-number) {
+        font-size: 18px;
+    }
+}
+
+@media (1280px <= width <= 1366px) {
     .park__content > p:not(.park__title-number) {
         font-size: 16px;
     }
@@ -236,6 +242,7 @@
 @media (1280px <= width <= 1800px) {
     .park__note-title {
         font-size: 28px;
+        max-width: 319px;
     }
 }
 
@@ -260,6 +267,12 @@
 }
 
 @media (1280px <= width <= 1800px) {
+    .park__note-description {
+        font-size: 18px;
+    }
+}
+
+@media (1280px <= width <= 1366px) {
     .park__note-description {
         font-size: 16px;
     }

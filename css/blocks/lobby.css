@@ -21,7 +21,7 @@
 
 }
 .lobby__subtitle {
-    max-width: 70%;
+    max-width: 75%;
     margin-bottom: 32px;
 }
 @media (width <= 768px) {
@@ -60,6 +60,10 @@
 }
 
 @media (769px <= width <= 1800px) {
+    .lobby__title {
+        font-size: 16px;
+    }
+
     .lobby__subtitle {
         max-width: 85%;
         font-size: 40px;
@@ -67,7 +71,6 @@
 
     .lobby__inner > p {
         max-width: 55%;
-        font-size: 18px;
     }
 
     .lobby__img-wrapper {
@@ -87,6 +90,5 @@
 
     .lobby__inner > p {
         max-width: 60%;
-        font-size: 16px;
     }
 }
