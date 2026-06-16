@@ -66,6 +66,16 @@ max-width: 40%;
 max-width: 100%;
     }
 }
+@media (1367px <= width <= 1536px) {
+    .booklet__title {
+        font-size: 40px;
+    }
+}
+@media (1131px <= width <= 1366px) {
+    .booklet__title {
+        font-size: 36px;
+    }
+}
 .booklet__button {
     margin-left: auto;
     font-weight: 400;
