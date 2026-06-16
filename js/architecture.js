@@ -9,11 +9,6 @@ export function initArchitectureParallax() {
 
   if (!section || !img || !content) return;
 
-  let sectionH = 0;
-  let houseH = 0;
-  let contentH = 0;
-  let amp = 0;
-
   function syncResponsiveStructure() {
     if (!imgWrapper || !desktopTitles || !listWrapper) return;
 
@@ -26,63 +21,62 @@ export function initArchitectureParallax() {
     }
   }
 
-  function layout() {
+  function update() {
     if (mql.matches) {
-      section.style.height = '';
       img.style.transform = 'none';
       content.style.transform = 'none';
       return;
     }
-
-    img.style.transform = 'none';
-    content.style.transform = 'none';
-
-    houseH = img.offsetHeight;
-    contentH = content.offsetHeight;
-
-    amp = Math.max(110, Math.min(180, Math.round(houseH * 0.15)));
-    sectionH = Math.max(houseH, contentH) + Math.round(amp * 1.6);
-    section.style.height = sectionH + 'px';
-
-    update();
-  }
-
-  function update() {
-    if (mql.matches) return;
 
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
     if (rect.bottom < 0 || rect.top > windowHeight) return;
 
-    let progress = (windowHeight - rect.top) / (windowHeight + sectionH);
+    const sectionHeight = section.offsetHeight;
+
+    const start = windowHeight * 0.3;
+    const end = -sectionHeight;
+
+    let progress = (start - rect.top) / (start - end);
     progress = Math.max(0, Math.min(1, progress));
 
-    const imgMove = progress * amp;
-    const contentMove = amp * (1.6 - 0.6 * progress);
+    const maxImgMove = sectionHeight - img.offsetHeight;
+    const maxContentMove = sectionHeight - content.offsetHeight;
+
+    const IMG_SPEED = 1.2;
+    const CONTENT_SPEED = 1.3;
+
+    const imgProgress = Math.min(1, progress * IMG_SPEED);
+    const contentProgress = Math.min(1, progress * CONTENT_SPEED);
+
+    let imgMove = imgProgress * maxImgMove;
+    let contentMove = contentProgress * maxContentMove;
+
+    const IMG_STOP = 301;
+    const CONTENT_STOP = 520;
+
+    imgMove = Math.min(imgMove, IMG_STOP);
+    contentMove = Math.min(contentMove, CONTENT_STOP);
 
     img.style.transform = `translateY(${imgMove}px)`;
     content.style.transform = `translateY(${contentMove}px)`;
   }
 
   syncResponsiveStructure();
-  layout();
-
-  const onResize = () => {
-    syncResponsiveStructure();
-    layout();
-  };
 
   if (typeof mql.addEventListener === 'function') {
-    mql.addEventListener('change', onResize);
+    mql.addEventListener('change', () => {
+      syncResponsiveStructure();
+      update();
+    });
   } else if (typeof mql.addListener === 'function') {
-    mql.addListener(onResize);
+    mql.addListener(() => {
+      syncResponsiveStructure();
+      update();
+    });
   }
 
-  section.querySelectorAll('img').forEach((image) => {
-    if (!image.complete) image.addEventListener('load', layout, { once: true });
-  });
-
-  window.addEventListener('resize', onResize);
   window.addEventListener('scroll', update, { passive: true });
+  update();
 }
