@@ -243,6 +243,20 @@ gap: 16px;
 }
 }
 
+@media (1280px <= width <= 1536px) {
+    .city-life__video-wrapper,
+    .city-life__content > ul > li {
+        max-width: 301px;
+    }
+}
+
+@media (1280px <= width <= 1336px) {
+    .city-life__video-wrapper,
+    .city-life__content > ul > li {
+        max-width: 259px;
+    }
+}
+
 .city-life__content > ul > li::before {
     content: "";
     display: inline-flex;
