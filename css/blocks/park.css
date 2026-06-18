@@ -162,6 +162,7 @@
 }
 
 .park__content > p:not(.park__title-number) {
+    max-width: 876px;
     font-weight: 300;
     font-size: 20px;
     color: var(--white);
@@ -173,9 +174,21 @@
     }
 }
 
+@media (1280px <= width <= 1536px) {
+    .park__content > p:not(.park__title-number) {
+        max-width: 647px;
+    }
+}
+
 @media (1280px <= width <= 1366px) {
     .park__content > p:not(.park__title-number) {
         font-size: 16px;
+    }
+}
+
+@media (1280px <= width <= 1281px) {
+    .park__content > p:not(.park__title-number) {
+        max-width: 591px;
     }
 }
 
