@@ -176,6 +176,8 @@
 
 @media (1280px <= width <= 1536px) {
     .park__content > p:not(.park__title-number) {
+        font-family: var(--font-family);
+        font-weight: 400;
         max-width: 647px;
     }
 }
@@ -196,6 +198,18 @@
     .park__content > p:not(.park__title-number) {
         font-weight: 300;
         font-size: 16px;
+    }
+}
+
+@media (width <=768px) {
+    .park__content > p:not(.park__title-number) {
+        max-width: 386px;
+    }
+}
+
+@media (width <=360px) {
+    .park__content > p:not(.park__title-number) {
+        max-width: 328px;
     }
 }
 
