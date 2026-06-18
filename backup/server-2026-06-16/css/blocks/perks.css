@@ -1,0 +1,256 @@
+.perks {}
+
+.container__perks {
+    padding-block: 120px 81px;
+}
+
+@media (width <= 1000px) {
+    .container__perks {
+    padding-block: 40px 64px;
+    }
+}
+
+.perks__inner {}
+
+.perks__title {
+    font-weight: 300;
+    margin-bottom: 48px;
+    max-width: 1200px;
+    font-family: var(--second-family);
+    font-size: 48px;
+    line-height: 124%;
+    text-transform: uppercase;
+    color: var(--for-light-text);
+}
+
+@media (width <= 1000px) {
+    .perks__title {
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+}
+
+.perks__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 60px;
+}
+
+@media (width <= 1000px) {
+.perks__wrapper {
+    flex-direction: column;
+    gap: 40px;
+}
+}
+
+@media (width <= 680px) {
+.perks__wrapper {
+    gap: 48px;
+    align-items: center;
+}
+}
+
+.perks__slider-block {
+    width: min(100%, 1192px);
+    flex: 1 1 auto;
+    min-width: 0;
+    position: sticky;
+    top: 32px;
+    align-self: start;
+}
+
+@media (width <= 1000px) {
+    .perks__slider-block {
+    position: static;
+    }
+}
+
+.perks__slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* для плавности анимации */
+.perks__slider .swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.66, 0.01, 0.45, 0.98);
+}
+
+.perks__slide {
+    width: 100%;
+}
+
+.perks__slide-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.perks__slider-nav {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+@media (width <= 1000px) {
+    .perks__slider-nav {
+        margin-top: 16px;
+        gap: 15px;
+    }
+}
+
+.perks__slider-nav-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.perks__slider-icon {
+    display: block;
+    width: 80px;
+    height: 80px;
+    transition: display var(--transition-time) ease-out, opacity var(--transition-time) ease-out;
+}
+
+@media (width <= 1000px) {
+    .perks__slider-icon, .perks__slider-icon--hover {
+    width: 49px;
+    height: 49px;
+}
+}
+
+.perks__slider-nav-button--next .perks__slider-icon {
+    transform: rotate(180deg);
+}
+
+.perks__slider-nav-button--next .perks__slider-icon--hover {
+    transform: rotate(180deg);
+}
+
+.perks__slider-icon--hover {
+    display: none;
+    opacity: 0;
+    transition: display var(--transition-time) ease-out, opacity var(--transition-time) ease-out;
+}
+
+.perks__slider-nav-button:hover .perks__slider-icon {
+    display: none;
+    opacity: 0;
+}
+
+.perks__slider-nav-button:hover .perks__slider-icon--hover {
+    display: block;
+    opacity: 1;
+}
+
+.perks__slider-fraction {
+    font-family: var(--third-family);
+font-weight: 400;
+font-size: 18px;
+text-transform: uppercase;
+color: var(--dark-brown);
+}
+
+@media (width <= 1000px) {
+.perks__slider-fraction {
+font-size: 16px;
+}
+}
+
+.perks__list-wrapper {
+    flex: 0 0 432px;
+    max-width: 432px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+@media (width <= 1300px) {
+.perks__list-wrapper {
+flex: 0 0 300px;
+}
+}
+@media (width <= 1000px) {
+.perks__list-wrapper {
+    max-width: 100%;
+    flex-direction: row;
+}
+}
+
+@media (width <= 680px) {
+.perks__list-wrapper {
+    gap: 24px;
+    flex-direction: column;
+}
+}
+
+.perks__list-img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.perks__list-img-wrapper::after {
+content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 165px;
+    background: url(../../decor/wave-short.svg) no-repeat center / cover;
+    z-index: 2;
+}
+@media (width <= 1000px) {
+.perks__list-img-wrapper::after {
+    height: 150px;
+    background: url(../../decor/wave-short.svg) no-repeat center / cover;
+}
+}
+.perks__list-img {
+        position: relative;
+        border-radius: 800px 800px 0 0;
+        z-index: 1;
+}
+
+.perks__list {
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+
+@media (width <= 1000px) {
+    .perks__list {
+gap: 16px;
+}
+}
+
+.perks__list-item {
+    font-size: 20px;
+color: var(--brand-brown);
+display: flex;
+gap: 16px;
+}
+
+@media (width <= 1000px) {
+    .perks__list-item {
+    font-size: 16px;
+gap: 16px;
+}
+}
+
+
+.perks__list-item::before {
+    content: "";
+    margin-top: 8px;
+    flex-shrink: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--for-light-text);
+}

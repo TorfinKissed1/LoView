@@ -1,0 +1,33 @@
+:root {
+  /* шрифты */
+  --font-family: "Onest", sans-serif;
+  --second-family: "Monesta", sans-serif;
+  --third-family: "Inter", sans-serif;
+
+  /* цвета */
+  --for-light-text: #2f2b29;
+  --dark-brown: #3c3634;
+  --brand-brown: #4f4744;
+  --white: #fff;
+  --light-brown-2: #f6f1eb;
+  --light-brown-1: #e6ddd1;
+  --middle-brown: #cbbfaf;
+  --brown: #bbada1;
+  --brown-darken: #8a8077;
+  --background-color: #f4f4f2;
+
+
+  /* контейнер */
+  --container-width: 1800px;
+  --container-padding: 60px;
+
+
+  /* переходы */
+  --transition-time: 0.4s;
+}
+
+@media (width <=768px) {
+  :root {
+    --container-padding: 16px;
+  }
+}

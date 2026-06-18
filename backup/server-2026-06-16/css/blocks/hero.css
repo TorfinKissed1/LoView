@@ -1,0 +1,304 @@
+.hero {
+    position: relative;
+    transition: height var(--transition-time) ease-out, min-height var(--transition-time) ease-out;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 188px;
+    background: url(../../decor/Wave.svg) no-repeat center;
+    z-index: 2;
+}
+
+@media (width <= 1050px) {
+    .hero::after {
+        display: none;
+    }
+}
+
+.hero__container {
+    height: 100%;
+    position: relative;
+    background: url(../../images/img-hero-banner_2x.webp) no-repeat center / cover;
+}
+
+@media (width <= 360px) {
+    .hero__container {
+        width: 100%;
+    }
+}
+
+.hero__container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 674px;
+    height: 755px;
+    background: url(../../decor/hero-decor-ark.svg) no-repeat center;
+    z-index: 2;
+}
+
+.hero__container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(50%);
+    width: 674px;
+    height: 755px;
+    background: url(../../decor/hero-decor-ark.svg) no-repeat center;
+    z-index: 2;
+}
+
+@media (width <=1500px) {
+
+    .hero__container::before,
+.hero__container::after {
+  transition: display var(--transition-time) ease-out, opacity var(--transition-time) ease-out;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+}
+
+.hero__inner {
+    height: 100%;
+    padding-top: 42px;
+    margin-inline: auto;
+    min-height: 754px;
+    width: 50%;
+    position: relative;
+    background: url(../../decor/hero-decor-ark.svg) no-repeat top / contain;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: width var(--transition-time) ease-out;
+}
+
+@media (width <=1050px) {
+    .hero__inner {
+        padding-top: 32px;
+        min-height: 520px;
+        width: 60%;
+        background: url(../../decor/decor-hero-tablet.svg) no-repeat top / cover;
+    }
+}
+
+@media (width <=930px) {
+    .hero__inner {
+        background: url(../../decor/decor-hero-tablet.svg) no-repeat top / contain;
+    }
+}
+
+@media (width <=500px) {
+    .hero__inner {
+        padding-top: 24px;
+        min-height: 360px;
+        width: 90%;
+        background: url(../../decor/decor-hero-mobile.svg) no-repeat top / contain;
+    }
+}
+
+.hero__text-wrapper {
+    padding-inline: 4px;
+    margin-inline: auto;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    transition: opacity var(--transition-time) ease-out, display var(--transition-time) ease-out;
+}
+
+.hero__number {
+    font-family: var(--second-family);
+    font-size: 80px;
+    line-height: 100%;
+    color: var(--white);
+}
+
+@media (width <= 768px) {
+    .hero__number {
+    font-size: 64px;
+    }
+}
+
+@media (width <= 500px) {
+    .hero__number {
+    font-size: 48px;
+    }
+}
+
+.hero__text {
+    margin-bottom: 10px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 124%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+}
+
+@media (width <= 768px) {
+.hero__text {
+    margin-bottom: 5px;
+    font-size: 20px;
+    }
+}
+
+@media (width <= 500px) {
+.hero__text {
+    font-size: 16px;
+    }
+}
+
+.hero__link {
+    padding-block: 5px;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    transition: color var(--transition-time);
+}
+
+.hero__link:hover {
+    color: var(--brand-brawn);
+}
+
+@media (width <= 768px) {
+.hero__link {
+    padding-block: 4px;
+    font-size: 14px;
+    }
+}
+
+@media (width <= 500px) {
+.hero__link {
+    font-size: 12px;
+    }
+}
+
+.hero__decor-holder {
+    position: relative;
+    flex: 1;
+    margin-top: 100px;
+}
+
+@media (width <=1410px) {
+    .hero__decor-holder {
+        border-right: 2px solid var(--white);
+        border-left: 2px solid var(--white);
+    }
+}
+
+@media (width <=1130px) {
+    .hero__decor-holder {
+        margin-top: 50px;
+        border-right: 1px solid var(--white);
+        border-left: 1px solid var(--white);
+    }
+}
+
+@media (width <=1050px) {
+    .hero__decor-holder {
+        margin-top: 80px;
+        border-right: 1px solid var(--white);
+        border-left: 1px solid var(--white);
+    }
+}
+
+@media (width <=500px) {
+    .hero__decor-holder {
+        border: none;
+    }
+}
+
+@media (width <= 396px) {
+     .hero__decor-holder {
+        margin-top: 180px;
+        border-right: 2px solid var(--white);
+        border-left: 2px solid var(--white);
+    }
+}
+
+@media (width <= 360px) {
+     .hero__decor-holder {
+        border: none;
+    }
+}
+
+.hero__decor-holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}
+
+@media (width <=1050px) {
+    .hero__decor-holder::after {
+        height: 180px;
+        background: url(../../decor/wave-short.svg) no-repeat bottom / cover;
+    }
+}
+
+@media (width <=880px) {
+    .hero__decor-holder::after {
+        height: 130px;
+    }
+}
+
+@media (width <=500px) {
+    .hero__decor-holder::after {
+        height: 88px;
+        background: url(../../decor/hero-decor-wave-mobile.svg) no-repeat bottom / contain;
+    }
+}
+
+/* под анимацию при скролле на мобилках */
+.hero.scroll-shrink {
+  height: 151px;
+  min-height: 151px;
+}
+
+.hero.scroll-shrink .hero__inner {
+    padding: 0px;
+  width: 133px; 
+  height: 151px;
+  min-height: 151px;
+}
+
+.hero.scroll-shrink .hero__inner .hero__decor-holder {
+    margin-top: 0px;
+    border: none;
+}
+
+.hero.scroll-shrink .hero__inner .hero__text-wrapper {
+    opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.hero.scroll-shrink .hero__container::before,
+.hero.scroll-shrink .hero__container::after {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    width: 133px;
+    height: 151px;
+    background: url(../../decor/hero-decor-ark.svg) no-repeat center / contain;
+}

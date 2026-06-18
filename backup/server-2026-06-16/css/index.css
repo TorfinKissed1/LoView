@@ -1,0 +1,26 @@
+@import "./base/normalize.css";
+@import "./base/fonts.css";
+@import "./base/vars.css";
+@import "./base/globals.css";
+
+/* blocks */
+@import './blocks/header.css';
+@import './blocks/hero.css';
+@import './blocks/perks.css';
+@import './blocks/location.css';
+@import './blocks/park.css';
+@import './blocks/map.css';
+@import './blocks/city-life.css';
+@import './blocks/beaches.css';
+@import './blocks/architecture.css';
+@import './blocks/roof.css';
+@import './blocks/infrastructure.css';
+@import './blocks/lobby.css';
+@import './blocks/apartments.css';
+@import './blocks/comfort.css';
+@import './blocks/services.css';
+@import './blocks/formats.css';
+@import './blocks/about.css';
+@import './blocks/booklet.css';
+@import './blocks/footer.css';
+@import './blocks/pop-ups.css';
