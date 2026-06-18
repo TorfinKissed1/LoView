@@ -203,6 +203,14 @@ padding-right: 0px;
     flex-direction: column;
     gap: 32px;
 }
+.architecture__list-text-wrapper > p {
+    max-width: 272px;
+}
+@media (width: 1280px) {
+    .architecture__list-text-wrapper > p {
+        max-width: 291px;
+    }
+}
 @media (width <=1000px) {
     .architecture {
         height: auto;
@@ -212,6 +220,11 @@ padding-right: 0px;
         flex: 1;
         font-size: 16px;
         gap: 16px;
+    }
+}
+@media (width <=760px) {
+    .architecture__list-text-wrapper > p {
+        max-width: 360px;
     }
 }
 .architecture__list-text-wrapper ul {
