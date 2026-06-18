@@ -83,6 +83,12 @@
     }
 }
 
+@media (width: 1536px) {
+    .lobby__inner > p {
+        max-width: 769px;
+    }
+}
+
 @media (769px <= width <= 1366px) {
     .lobby__subtitle {
         font-size: 36px;
