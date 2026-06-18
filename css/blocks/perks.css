@@ -35,6 +35,18 @@
     }
 }
 
+@media (min-width: 1001px) and (max-width: 1536px) {
+    .perks__title {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1366px) {
+    .perks__title {
+        max-width: 809px;
+    }
+}
+
 @media (width <= 1000px) {
     .perks__title {
         margin-bottom: 40px;
