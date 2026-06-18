@@ -382,6 +382,12 @@
     }
 }
 
+@media (1280px <= width <= 1536px) {
+    .comfort__list-item > p {
+        max-width: 351px;
+    }
+}
+
 @media (1280px <= width <= 1366px) {
     .comfort__container {
         padding-block: 64px 56px;
